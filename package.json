@@ -1,7 +1,7 @@
 {
   "name": "react-email-editor",
   "version": "0.2.5",
-  "description": "react-email-editor React component",
+  "description": "Unroll's Email Editor Component for React.js",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
