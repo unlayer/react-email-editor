@@ -1,6 +1,6 @@
 {
   "name": "react-email-editor",
-  "version": "0.2.5",
+  "version": "0.2.8",
   "description": "Unroll's Email Editor Component for React.js",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -31,9 +31,9 @@
     "react-dom": "^16.0.0"
   },
   "author": "",
-  "homepage": "",
+  "homepage": "https://github.com/unroll-io/react-email-editor#readme",
   "license": "MIT",
-  "repository": "",
+  "repository": "https://github.com/unroll-io/react-email-editor.git",
   "keywords": [
     "react-component"
   ]
