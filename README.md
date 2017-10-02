@@ -1,6 +1,6 @@
 # React Email Editor by Unroll
 
-The excellent [Unroll](https://unroll.io) email editor as a [React.js](http://facebook.github.io/react) component.
+The excellent [Unroll](https://unroll.io) email editor as a [React.js](http://facebook.github.io/react) component. This is the most powerful and developer friendly email builder for your app.
 
 [![React Email Editor](https://s3.amazonaws.com/unroll-assets/unrollyoutube.png)](https://www.youtube.com/watch?v=IoY7-NZ8TcA)
 
@@ -54,7 +54,7 @@ render(<App />, document.getElementById('app'))
 * `minHeight` `String` minimum height to initialize the editor with (default 500px)
 * `options` `Object` options passed to the Unroll editor instance (default {})
 
-See the [Unroll Docs](https://docs.unroll.io/getting-started/) for the available options.
+See the [Unroll Docs](https://docs.unroll.io/getting-started/) for all available options.
 
 See the [example source](https://github.com/unroll-io/react-email-editor/blob/master/demo/src/index.js) for a reference implementation.
 
