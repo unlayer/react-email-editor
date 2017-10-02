@@ -7,8 +7,26 @@ class Demo extends Component {
   render() {
     return <div>
       <h1>react-email-editor Demo</h1>
-      <Example/>
+
+      <div>
+        <button onClick={this.saveDesign}>Save Design</button>
+        <button onClick={this.exportHtml}>Export HTML</button>
+      </div>
+
+      <Example ref={designer => this.designer = designer}/>
     </div>
+  }
+
+  saveDesign = () => {
+    this.designer.saveDesign(design => {
+      console.log('saveDesign', design)
+    })
+  }
+
+  exportHtml = () => {
+    this.designer.exportHtml(html => {
+      console.log('exportHtml', html)
+    })
   }
 }
 

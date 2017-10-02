@@ -1,6 +1,6 @@
 {
   "name": "react-email-editor",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "react-email-editor React component",
   "main": "lib/index.js",
   "module": "es/index.js",

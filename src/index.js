@@ -15,7 +15,7 @@ const Designer = styled.div`
     flex: 1;
     width: 100%;
     height: 100%;
-    min-height: ${props => props.minHeight || '700px'} !important;
+    min-height: ${props => props.minHeight || '500px'} !important;
     display: flex;
     border: 0px;
   }
@@ -46,5 +46,17 @@ export default class extends Component {
       projectId: this.props.projectId,
       templateId: this.props.templateId,
     })
+  }
+
+  loadDesign = (design) => {
+    unroll.loadDesign(design)
+  }
+
+  saveDesign = (callback) => {
+    unroll.saveDesign(callback)
+  }
+
+  exportHtml = (callback) => {
+    unroll.exportHtml(callback)
   }
 }
