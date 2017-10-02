@@ -1,16 +1,62 @@
-# react-email-editor
+# React Email Editor by Unroll
 
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
+The excellent [Unroll](https://unroll.io) email editor as a [React.js](http://facebook.github.io/react) component.
 
-Describe react-email-editor here.
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
+## Installation
 
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
+The easiest way to use React Email Editor is to install it from NPM and include it in your own React build process.
 
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
+```
+npm install react-email-editor --save
+```
+
+
+## Usage
+
+Require the EmailEditor component and render it with JSX:
+
+```javascript
+import React, { Component } from 'react'
+import { render } from 'react-dom'
+
+import EmailEditor from 'react-email-editor'
+
+class App extends Component {
+  render() {
+    return <div>
+      <h1>react-email-editor Demo</h1>
+
+      <div>
+        <button onClick={this.exportHtml}>Export HTML</button>
+      </div>
+
+      <Example
+        ref={designer => this.designer = designer}
+      />
+    </div>
+  }
+
+  exportHtml = () => {
+    this.designer.exportHtml(html => {
+      console.log('exportHtml', html)
+    })
+  }
+}
+
+render(<App />, document.getElementById('app'))
+```
+
+### Properties
+
+* `style` `Object` style object for the editor container (default {})
+* `minHeight` `String` minimum height to initialize the editor with (default 500px)
+* `options` `Object` options passed to the Unroll editor instance (default {})
+
+See the [Unroll Docs](https://docs.unroll.io/getting-started/) for the available options.
+
+See the [example source](https://github.com/unroll-io/react-email-editor/blob/master/demo/src/index.js) for a reference implementation.
+
+### License
+
+Copyright (c) 2016 Jed Watson. [MIT](LICENSE) Licensed.
