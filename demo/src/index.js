@@ -13,7 +13,9 @@ class Demo extends Component {
         <button onClick={this.exportHtml}>Export HTML</button>
       </div>
 
-      <Example ref={designer => this.designer = designer}/>
+      <Example
+        ref={designer => this.designer = designer}
+      />
     </div>
   }
 

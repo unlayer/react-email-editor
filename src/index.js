@@ -41,10 +41,9 @@ export default class extends Component {
 
   unrollReady = () => {
     unroll.init({
+      ...(this.props.options || {}),
       id: 'editor',
       displayMode: 'email',
-      projectId: this.props.projectId,
-      templateId: this.props.templateId,
     })
   }
 
