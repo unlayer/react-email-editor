@@ -2,6 +2,7 @@
 
 The excellent [Unroll](https://unroll.io) email editor as a [React.js](http://facebook.github.io/react) component.
 
+[![React Email Editor](https://s3.amazonaws.com/unroll-assets/unrollyoutube.png)](https://www.youtube.com/watch?v=IoY7-NZ8TcA)
 
 ## Installation
 
@@ -31,7 +32,7 @@ class App extends Component {
         <button onClick={this.exportHtml}>Export HTML</button>
       </div>
 
-      <Example
+      <EmailEditor
         ref={designer => this.designer = designer}
       />
     </div>
