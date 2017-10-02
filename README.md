@@ -62,4 +62,4 @@ See the [example source](https://github.com/unroll-io/react-email-editor/blob/ma
 
 ### License
 
-Copyright (c) 2016 Jed Watson. [MIT](LICENSE) Licensed.
+Copyright (c) 2017 Unroll. [MIT](LICENSE) Licensed.
