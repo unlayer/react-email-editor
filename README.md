@@ -2,8 +2,10 @@
 
 The excellent [Unroll](https://unroll.io) email editor as a [React.js](http://facebook.github.io/react) component. This is the most powerful and developer friendly email builder for your app.
 
-[![React Email Editor](https://s3.amazonaws.com/unroll-assets/unrollyoutube.png)](https://www.youtube.com/watch?v=IoY7-NZ8TcA)
-*Watch video overview: https://youtu.be/IoY7-NZ8TcA*
+Video Overview |
+:---: |
+[![React Email Editor](https://s3.amazonaws.com/unroll-assets/unrollyoutube.png)](https://www.youtube.com/watch?v=IoY7-NZ8TcA) |
+*Watch video overview: https://youtu.be/IoY7-NZ8TcA* |
 
 ## Installation
 
@@ -12,7 +14,6 @@ The easiest way to use React Email Editor is to install it from NPM and include 
 ```
 npm install react-email-editor --save
 ```
-
 
 ## Usage
 
