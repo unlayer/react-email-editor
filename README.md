@@ -7,6 +7,11 @@ Video Overview |
 [![React Email Editor](https://s3.amazonaws.com/unroll-assets/unrollyoutube.png)](https://www.youtube.com/watch?v=IoY7-NZ8TcA) |
 *Watch video overview: https://youtu.be/IoY7-NZ8TcA* |
 
+
+## Live Demo
+
+Check out the live demo here: http://react-email-editor-demo.netlify.com/
+
 ## Installation
 
 The easiest way to use React Email Editor is to install it from NPM and include it in your own React build process.
