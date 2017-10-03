@@ -65,8 +65,13 @@ class Demo extends Component {
       <Example
         minHeight={"768px"}
         ref={designer => this.designer = designer}
+        onLoad={this.onLoad}
       />
     </Container>
+  }
+
+  onLoad = () => {
+    this.designer.loadDesign(require('./sample.json'))
   }
 
   saveDesign = () => {

@@ -45,6 +45,9 @@ export default class extends Component {
       id: 'editor',
       displayMode: 'email',
     })
+    
+    const { onLoad } = this.props
+    onLoad && onLoad()
   }
 
   loadDesign = (design) => {
