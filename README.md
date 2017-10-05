@@ -12,6 +12,10 @@ Video Overview |
 
 Check out the live demo here: http://react-email-editor-demo.netlify.com/ ([Source Code](https://github.com/unroll-io/react-email-editor/blob/master/demo/src/index.js))
 
+## Blog Post
+
+Here's a blog post with a quickstart guide: https://medium.com/unroll-blog/creating-a-drag-n-drop-email-editor-with-react-db1e9eb42386
+
 ## Installation
 
 The easiest way to use React Email Editor is to install it from NPM and include it in your own React build process.
