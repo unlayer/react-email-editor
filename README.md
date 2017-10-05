@@ -50,7 +50,8 @@ class App extends Component {
   }
 
   exportHtml = () => {
-    this.designer.exportHtml(html => {
+    this.designer.exportHtml(data => {
+      const { design, html } = data
       console.log('exportHtml', html)
     })
   }
