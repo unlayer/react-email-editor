@@ -82,7 +82,8 @@ class Demo extends Component {
   }
 
   exportHtml = () => {
-    this.designer.exportHtml(html => {
+    this.designer.exportHtml(data => {
+      const { design, html } = data
       console.log('exportHtml', html)
       alert("Output HTML has been logged in your developer console.")
     })
