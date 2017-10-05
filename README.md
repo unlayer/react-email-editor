@@ -64,6 +64,7 @@ render(<App />, document.getElementById('app'))
 
 * `style` `Object` style object for the editor container (default {})
 * `minHeight` `String` minimum height to initialize the editor with (default 500px)
+* `onLoad` `Function` called when the editor has finished loading
 * `options` `Object` options passed to the Unroll editor instance (default {})
 
 See the [Unroll Docs](https://docs.unroll.io/getting-started/) for all available options.
