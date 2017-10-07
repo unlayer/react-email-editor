@@ -69,6 +69,12 @@ render(<App />, document.getElementById('app'))
 
 See the [Unroll Docs](https://docs.unroll.io/getting-started/) for all available options.
 
+### Methods
+
+* `loadDesign` - `function(Object data)` - Takes the design JSON and loads it in the editor
+* `saveDesign` - `function(Function callback)` - Returns the design JSON in a callback function
+* `exportHtml` - `function(Function callback)` - Returns the design HTML and JSON in a callback function
+
 See the [example source](https://github.com/unroll-io/react-email-editor/blob/master/demo/src/index.js) for a reference implementation.
 
 ### License
