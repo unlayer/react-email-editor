@@ -63,7 +63,6 @@ class Demo extends Component {
       </Bar>
 
       <Example
-        minHeight={"768px"}
         ref={designer => this.designer = designer}
         onLoad={this.onLoad}
       />
