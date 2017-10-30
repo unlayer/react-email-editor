@@ -31,9 +31,9 @@
     "react-dom": "^16.0.0"
   },
   "author": "",
-  "homepage": "https://github.com/unroll-io/react-email-editor#readme",
+  "homepage": "https://github.com/unlayer/react-email-editor#readme",
   "license": "MIT",
-  "repository": "https://github.com/unroll-io/react-email-editor.git",
+  "repository": "https://github.com/unlayer/react-email-editor.git",
   "keywords": [
     "react-component"
   ]

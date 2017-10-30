@@ -10,7 +10,7 @@ Video Overview |
 
 ## Live Demo
 
-Check out the live demo here: http://react-email-editor-demo.netlify.com/ ([Source Code](https://github.com/unroll-io/react-email-editor/blob/master/demo/src/index.js))
+Check out the live demo here: http://react-email-editor-demo.netlify.com/ ([Source Code](https://github.com/unlayer/react-email-editor/blob/master/demo/src/index.js))
 
 ## Blog Post
 
