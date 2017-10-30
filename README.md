@@ -75,7 +75,7 @@ See the [Unlayer Docs](https://docs.unlayer.com/getting-started/) for all availa
 * `saveDesign` - `function(Function callback)` - Returns the design JSON in a callback function
 * `exportHtml` - `function(Function callback)` - Returns the design HTML and JSON in a callback function
 
-See the [example source](https://github.com/unroll-io/react-email-editor/blob/master/demo/src/index.js) for a reference implementation.
+See the [example source](https://github.com/unlayer/react-email-editor/blob/master/demo/src/index.js) for a reference implementation.
 
 ### License
 
