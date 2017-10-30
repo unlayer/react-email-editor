@@ -1,6 +1,6 @@
 # React Email Editor
 
-The excellent drag-n-drop email editor by [Unroll.io](https://unroll.io) as a [React.js](http://facebook.github.io/react) *wrapper component*. This is the most powerful and developer friendly visual email builder for your app.
+The excellent drag-n-drop email editor by [Unlayer](https://unlayer.com) as a [React.js](http://facebook.github.io/react) *wrapper component*. This is the most powerful and developer friendly visual email builder for your app.
 
 Video Overview |
 :---: |
@@ -65,9 +65,9 @@ render(<App />, document.getElementById('app'))
 * `style` `Object` style object for the editor container (default {})
 * `minHeight` `String` minimum height to initialize the editor with (default 500px)
 * `onLoad` `Function` called when the editor has finished loading
-* `options` `Object` options passed to the Unroll editor instance (default {})
+* `options` `Object` options passed to the Unlayer editor instance (default {})
 
-See the [Unroll Docs](https://docs.unroll.io/getting-started/) for all available options.
+See the [Unlayer Docs](https://docs.unlayer.com/getting-started/) for all available options.
 
 ### Methods
 
@@ -79,4 +79,4 @@ See the [example source](https://github.com/unroll-io/react-email-editor/blob/ma
 
 ### License
 
-Copyright (c) 2017 Unroll. [MIT](LICENSE) Licensed.
+Copyright (c) 2017 Unlayer. [MIT](LICENSE) Licensed.

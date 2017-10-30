@@ -26,8 +26,8 @@ export default class extends Component {
     return (
       <Wrapper>
         <Script
-          url="https://designer.unroll.io/assets/embed.bundle.js"
-          onLoad={this.unrollReady}
+          url="https://editor.unlayer.com/embed.js"
+          onLoad={this.unlayerReady}
         />
 
         <Designer
@@ -39,26 +39,26 @@ export default class extends Component {
     )
   }
 
-  unrollReady = () => {
-    unroll.init({
+  unlayerReady = () => {
+    unlayer.init({
       ...(this.props.options || {}),
       id: 'editor',
       displayMode: 'email',
     })
-    
+
     const { onLoad } = this.props
     onLoad && onLoad()
   }
 
   loadDesign = (design) => {
-    unroll.loadDesign(design)
+    unlayer.loadDesign(design)
   }
 
   saveDesign = (callback) => {
-    unroll.saveDesign(callback)
+    unlayer.saveDesign(callback)
   }
 
   exportHtml = (callback) => {
-    unroll.exportHtml(callback)
+    unlayer.exportHtml(callback)
   }
 }
