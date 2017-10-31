@@ -14,7 +14,7 @@ Check out the live demo here: http://react-email-editor-demo.netlify.com/ ([Sour
 
 ## Blog Post
 
-Here's a blog post with a quickstart guide: https://medium.com/unroll-blog/creating-a-drag-n-drop-email-editor-with-react-db1e9eb42386
+Here's a blog post with a quickstart guide: https://medium.com/unlayer-blog/creating-a-drag-n-drop-email-editor-with-react-db1e9eb42386
 
 ## Installation
 
