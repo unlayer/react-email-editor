@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   display: flex;
 `
 
-const Designer = styled.div`
+const Editor = styled.div`
   flex: 1;
   display: flex;
 
@@ -30,7 +30,7 @@ export default class extends Component {
           onLoad={this.unlayerReady}
         />
 
-        <Designer
+        <Editor
           id="editor"
           style={this.props.style}
           minHeight={this.props.minHeight}
@@ -46,8 +46,19 @@ export default class extends Component {
       displayMode: 'email',
     })
 
+    // All properties starting with on[Name] are registered as event listeners.
+    for (const [key, value] of Object.entries(this.props)) {
+      if (/^on/.test(key) && key != 'onLoad') {
+        this.addEventListener(key, value)
+      }
+    }
+
     const { onLoad } = this.props
     onLoad && onLoad()
+  }
+
+  addEventListener = (type, callback) => {
+    unlayer.addEventListener(type, callback)
   }
 
   loadDesign = (design) => {

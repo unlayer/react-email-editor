@@ -11,7 +11,7 @@ injectGlobal`
     height: 100%;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   }
-  
+
   #demo {
     height: 100%;
   }
@@ -31,13 +31,13 @@ const Bar = styled.div`
   padding: 10px;
   display: flex;
   max-height: 40px;
-  
+
   h1 {
     flex: 1;
     font-size: 16px;
     text-align: left;
   }
-  
+
   button {
     flex: 1;
     padding: 10px;
@@ -57,35 +57,41 @@ class Demo extends Component {
     return <Container>
       <Bar>
         <h1>React Email Editor (Demo)</h1>
-        
+
         <button onClick={this.saveDesign}>Save Design</button>
         <button onClick={this.exportHtml}>Export HTML</button>
       </Bar>
 
       <Example
-        ref={designer => this.designer = designer}
+        ref={editor => this.editor = editor}
         onLoad={this.onLoad}
+        onDesignLoad={this.onDesignLoad}
       />
     </Container>
   }
 
   onLoad = () => {
-    this.designer.loadDesign(require('./sample.json'))
+    // this.editor.addEventListener('onDesignLoad', this.onDesignLoad)
+    this.editor.loadDesign(require('./sample.json'))
   }
 
   saveDesign = () => {
-    this.designer.saveDesign(design => {
+    this.editor.saveDesign(design => {
       console.log('saveDesign', design)
       alert("Design JSON has been logged in your developer console.")
     })
   }
 
   exportHtml = () => {
-    this.designer.exportHtml(data => {
+    this.editor.exportHtml(data => {
       const { design, html } = data
       console.log('exportHtml', html)
       alert("Output HTML has been logged in your developer console.")
     })
+  }
+
+  onDesignLoad = (data) => {
+    console.log('onDesignLoad', data)
   }
 }
 

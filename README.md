@@ -44,13 +44,13 @@ class App extends Component {
       </div>
 
       <EmailEditor
-        ref={designer => this.designer = designer}
+        ref={editor => this.editor = editor}
       />
     </div>
   }
 
   exportHtml = () => {
-    this.designer.exportHtml(data => {
+    this.editor.exportHtml(data => {
       const { design, html } = data
       console.log('exportHtml', html)
     })
