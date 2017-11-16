@@ -3,6 +3,7 @@ import {render} from 'react-dom'
 import styled, { injectGlobal } from 'styled-components'
 
 import Example from '../../src'
+import sample from './sample.json'
 
 injectGlobal`
   html, body {
@@ -72,7 +73,7 @@ class Demo extends Component {
 
   onLoad = () => {
     // this.editor.addEventListener('onDesignLoad', this.onDesignLoad)
-    this.editor.loadDesign(require('./sample.json'))
+    this.editor.loadDesign(sample)
   }
 
   saveDesign = () => {
