@@ -79,4 +79,4 @@ See the [example source](https://github.com/unlayer/react-email-editor/blob/mast
 
 ### License
 
-Copyright (c) 2017 Unlayer. [MIT](LICENSE) Licensed.
+Copyright (c) 2018 Unlayer. [MIT](LICENSE) Licensed.
