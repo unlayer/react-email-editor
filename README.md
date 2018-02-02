@@ -77,6 +77,13 @@ See the [Unlayer Docs](https://docs.unlayer.com/getting-started/) for all availa
 
 See the [example source](https://github.com/unlayer/react-email-editor/blob/master/demo/src/index.js) for a reference implementation.
 
+## Custom Tools
+
+Custom tools can help you add your own content blocks to the editor. Every application is different and needs different tools to reach it's full potential. [Learn More](https://docs.unlayer.com/custom-tools/)
+
+[![Custom Tools](https://unlayer.com/assets/images/features/custom_tools.png)](https://docs.unlayer.com/custom-tools/)
+
+
 ### License
 
 Copyright (c) 2018 Unlayer. [MIT](LICENSE) Licensed.
