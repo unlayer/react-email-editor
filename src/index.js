@@ -40,8 +40,18 @@ export default class extends Component {
   }
 
   unlayerReady = () => {
+    const options = (this.props.options || {})
+
+    if (this.props.projectId) {
+      options.projectId = this.props.projectId
+    }
+
+    if (this.props.tools) {
+      options.tools = this.props.tools
+    }
+
     unlayer.init({
-      ...(this.props.options || {}),
+      ...options,
       id: 'editor',
       displayMode: 'email',
     })
