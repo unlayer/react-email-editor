@@ -82,4 +82,8 @@ export default class extends Component {
   exportHtml = (callback) => {
     unlayer.exportHtml(callback)
   }
+
+  setMergeTags = (mergeTags) => {
+    unlayer.setMergeTags(mergeTags)
+  }
 }
