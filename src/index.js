@@ -67,6 +67,10 @@ export default class extends Component {
     onLoad && onLoad()
   }
 
+  registerCallback = (type, callback) => {
+    unlayer.registerCallback(type, callback)
+  }
+
   addEventListener = (type, callback) => {
     unlayer.addEventListener(type, callback)
   }
