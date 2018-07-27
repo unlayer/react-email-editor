@@ -31,7 +31,7 @@ export default class extends Component {
         />
 
         <Editor
-          id="editor"
+          id={this.props.id || 'editor'}
           style={this.props.style}
           minHeight={this.props.minHeight}
         />
@@ -52,7 +52,7 @@ export default class extends Component {
 
     unlayer.init({
       ...options,
-      id: 'editor',
+      id: this.props.id || 'editor',
       displayMode: 'email',
     })
 
