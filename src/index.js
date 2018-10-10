@@ -54,6 +54,7 @@ export default class extends Component {
       ...options,
       id: 'editor',
       displayMode: 'email',
+      locale: this.props.locale,
     })
 
     // All properties starting with on[Name] are registered as event listeners.
