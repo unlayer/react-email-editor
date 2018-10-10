@@ -50,11 +50,14 @@ export default class extends Component {
       options.tools = this.props.tools
     }
 
+    if (this.props.locale) {
+      options.locale = this.props.locale
+    }
+    
     unlayer.init({
       ...options,
       id: 'editor',
       displayMode: 'email',
-      locale: this.props.locale,
     })
 
     // All properties starting with on[Name] are registered as event listeners.
