@@ -67,6 +67,7 @@ render(<App />, document.getElementById('app'))
 * `onLoad` `Function` called when the editor has finished loading
 * `options` `Object` options passed to the Unlayer editor instance (default {})
 * `tools` `Object` configuration for the built-in and custom tools (default {})
+* `appearance` `Object` configuration for appearance and theme (default {})
 * `projectId` `Integer` Unlayer project ID (optional)
 
 See the [Unlayer Docs](https://docs.unlayer.com/getting-started/) for all available options.

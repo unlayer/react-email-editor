@@ -49,6 +49,10 @@ export default class extends Component {
     if (this.props.tools) {
       options.tools = this.props.tools
     }
+    
+    if (this.props.appearance) {
+      options.appearance = this.props.appearance
+    }
 
     if (this.props.locale) {
       options.locale = this.props.locale
