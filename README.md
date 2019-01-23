@@ -89,4 +89,4 @@ Custom tools can help you add your own content blocks to the editor. Every appli
 
 ### License
 
-Copyright (c) 2018 Unlayer. [MIT](LICENSE) Licensed.
+Copyright (c) 2019 Unlayer. [MIT](LICENSE) Licensed.
