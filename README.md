@@ -89,7 +89,7 @@ Custom tools can help you add your own content blocks to the editor. Every appli
 
 ## Localization
 
-Translations provided by [PhraseApp](https://phraseapp.com)
+You can submit new language translations by creating a PR on this GitHub repo: https://github.com/unlayer/translations. Translations managed by [PhraseApp](https://phraseapp.com)
 
 ### License
 
