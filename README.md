@@ -87,6 +87,10 @@ Custom tools can help you add your own content blocks to the editor. Every appli
 [![Custom Tools](https://unlayer.com/assets/images/features/custom_tools.png)](https://docs.unlayer.com/custom-tools/)
 
 
+## Localization
+
+Translations provided by [PhraseApp](https://phraseapp.com)
+
 ### License
 
 Copyright (c) 2019 Unlayer. [MIT](LICENSE) Licensed.
