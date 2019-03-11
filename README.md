@@ -69,6 +69,7 @@ render(<App />, document.getElementById('app'))
 * `tools` `Object` configuration for the built-in and custom tools (default {})
 * `appearance` `Object` configuration for appearance and theme (default {})
 * `projectId` `Integer` Unlayer project ID (optional)
+* `id` `String` HTML id attribute passed to editor container for creating multiple editors on one page (default "editor")
 
 See the [Unlayer Docs](https://docs.unlayer.com/getting-started/) for all available options.
 
