@@ -70,7 +70,7 @@ render(<App />, document.getElementById('app'))
 * `appearance` `Object` configuration for appearance and theme (default {})
 * `projectId` `Integer` Unlayer project ID (optional)
 
-See the [Unlayer Docs](https://docs.unlayer.com/getting-started/) for all available options.
+See the [Unlayer Docs](https://docs.unlayer.com/docs) for all available options.
 
 ### Methods
 
