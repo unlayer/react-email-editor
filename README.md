@@ -70,7 +70,7 @@ render(<App />, document.getElementById('app'))
 * `appearance` `Object` configuration for appearance and theme (default {})
 * `projectId` `Integer` Unlayer project ID (optional)
 
-See the [Unlayer Docs](https://docs.unlayer.com/getting-started/) for all available options.
+See the [Unlayer Docs](https://docs.unlayer.com/) for all available options.
 
 ### Methods
 
@@ -82,9 +82,9 @@ See the [example source](https://github.com/unlayer/react-email-editor/blob/mast
 
 ## Custom Tools
 
-Custom tools can help you add your own content blocks to the editor. Every application is different and needs different tools to reach it's full potential. [Learn More](https://docs.unlayer.com/custom-tools/)
+Custom tools can help you add your own content blocks to the editor. Every application is different and needs different tools to reach it's full potential. [Learn More](https://docs.unlayer.com/docs/custom-tools)
 
-[![Custom Tools](https://unlayer.com/assets/images/features/custom_tools.png)](https://docs.unlayer.com/custom-tools/)
+[![Custom Tools](https://unlayer.com/assets/images/features/custom_tools.png)](https://docs.unlayer.com/docs/custom-tools)
 
 
 ## Localization
