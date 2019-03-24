@@ -31,7 +31,7 @@ export default class extends Component {
         />
 
         <Editor
-          id="editor"
+          id={this.props.id || 'editor'}
           style={this.props.style}
           minHeight={this.props.minHeight}
         />
@@ -49,7 +49,7 @@ export default class extends Component {
     if (this.props.tools) {
       options.tools = this.props.tools
     }
-    
+
     if (this.props.appearance) {
       options.appearance = this.props.appearance
     }
@@ -57,10 +57,10 @@ export default class extends Component {
     if (this.props.locale) {
       options.locale = this.props.locale
     }
-    
+
     unlayer.init({
       ...options,
-      id: 'editor',
+      id: this.props.id || 'editor',
       displayMode: 'email',
     })
 
