@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import Script from 'react-load-script'
 
 export default class extends Component {
-
   render() {
     let {
       props: {
@@ -24,7 +23,6 @@ export default class extends Component {
 
         <div
           id="editor"
-          className="editor"
           style={{...style, flex: 1}}
         />
       </div>
