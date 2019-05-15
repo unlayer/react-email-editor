@@ -22,14 +22,12 @@
     "react-load-script": "^0.0.6"
   },
   "peerDependencies": {
-    "react": "15.x || 16.x",
-    "styled-components": "2.x || 3.x"
+    "react": "15.x || 16.x"
   },
   "devDependencies": {
     "nwb": "^0.22.0",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "styled-components": "2.2.0"
+    "react-dom": "^16.0.0"
   },
   "author": "",
   "homepage": "https://github.com/unlayer/react-email-editor#readme",
