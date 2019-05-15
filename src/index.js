@@ -1,41 +1,31 @@
 import React, {Component} from 'react'
 import Script from 'react-load-script'
-import styled from 'styled-components'
-
-const Wrapper = styled.div`
-  flex: 1;
-  display: flex;
-`
-
-const Editor = styled.div`
-  flex: 1;
-  display: flex;
-
-  > iframe {
-    flex: 1;
-    width: 100%;
-    height: 100%;
-    min-height: ${props => props.minHeight || '500px'} !important;
-    display: flex;
-    border: 0px;
-  }
-`
 
 export default class extends Component {
   render() {
+    let {
+      props: {
+        minHeight = 500,
+        style = {}
+      }
+    } = this
+
     return (
-      <Wrapper>
+      <div style={{
+        flex: 1,
+        display: 'flex',
+        minHeight: minHeight
+      }}>
         <Script
           url="https://editor.unlayer.com/embed.js"
           onLoad={this.unlayerReady}
         />
 
-        <Editor
+        <div
           id="editor"
-          style={this.props.style}
-          minHeight={this.props.minHeight}
+          style={{...style, flex: 1}}
         />
-      </Wrapper>
+      </div>
     )
   }
 
