@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 import {render} from 'react-dom'
-import styled, { injectGlobal } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
 import Example from '../../src'
 import sample from './sample.json'
 
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   html, body {
     margin: 0;
     padding: 0;
@@ -55,20 +55,26 @@ const Bar = styled.div`
 
 class Demo extends Component {
   render() {
-    return <Container>
-      <Bar>
-        <h1>React Email Editor (Demo)</h1>
+    return (
+      <React.Fragment>
+        <GlobalStyle />
 
-        <button onClick={this.saveDesign}>Save Design</button>
-        <button onClick={this.exportHtml}>Export HTML</button>
-      </Bar>
+        <Container>
+          <Bar>
+            <h1>React Email Editor (Demo)</h1>
 
-      <Example
-        ref={editor => this.editor = editor}
-        onLoad={this.onLoad}
-        onDesignLoad={this.onDesignLoad}
-      />
-    </Container>
+            <button onClick={this.saveDesign}>Save Design</button>
+            <button onClick={this.exportHtml}>Export HTML</button>
+          </Bar>
+
+          <Example
+            ref={editor => this.editor = editor}
+            onLoad={this.onLoad}
+            onDesignLoad={this.onDesignLoad}
+          />
+        </Container>
+      </React.Fragment>
+    )
   }
 
   onLoad = () => {
