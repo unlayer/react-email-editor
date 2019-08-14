@@ -47,6 +47,10 @@ export default class extends Component {
     if (this.props.locale) {
       options.locale = this.props.locale
     }
+
+    if (this.props.features) {
+      options.features = this.props.features
+    }
     
     unlayer.init({
       ...options,
