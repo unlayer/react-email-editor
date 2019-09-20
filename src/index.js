@@ -17,7 +17,7 @@ export default class extends Component {
         minHeight: minHeight
       }}>
         <Script
-          url="https://editor.unlayer.com/embed.js"
+          url="https://editor.unlayer.com/embed.js?1"
           onLoad={this.unlayerReady}
         />
 
