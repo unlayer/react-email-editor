@@ -27,8 +27,8 @@ const Container = styled.div`
 
 const Bar = styled.div`
   flex: 1;
-  background-color: #4169E1;
-  color: #FFF;
+  background-color: #61dafb;
+  color: #000;
   padding: 10px;
   display: flex;
   max-height: 40px;
