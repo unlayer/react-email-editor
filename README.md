@@ -95,4 +95,4 @@ You can submit new language translations by creating a PR on this GitHub repo: h
 
 ### License
 
-Copyright (c) 2019 Unlayer. [MIT](LICENSE) Licensed.
+Copyright (c) 2020 Unlayer. [MIT](LICENSE) Licensed.
