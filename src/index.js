@@ -49,9 +49,9 @@ export default class extends Component {
     }
     
     unlayer.init({
-      ...options,
       id: 'editor',
       displayMode: 'email',
+      ...options
     })
 
     // All properties starting with on[Name] are registered as event listeners.
