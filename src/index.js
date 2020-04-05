@@ -17,7 +17,7 @@ export default class extends Component {
         minHeight: minHeight
       }}>
         <Script
-          url="https://editor.unlayer.com/embed.js?1"
+          url="https://editor.unlayer.com/embed.js?2"
           onLoad={this.unlayerReady}
         />
 
@@ -47,8 +47,8 @@ export default class extends Component {
     if (this.props.locale) {
       options.locale = this.props.locale
     }
-    
-    unlayer.init({
+
+    this.editor = unlayer.createEditor({
       ...options,
       id: 'editor',
       displayMode: 'email',
@@ -66,26 +66,26 @@ export default class extends Component {
   }
 
   registerCallback = (type, callback) => {
-    unlayer.registerCallback(type, callback)
+    this.editor.registerCallback(type, callback)
   }
 
   addEventListener = (type, callback) => {
-    unlayer.addEventListener(type, callback)
+    this.editor.addEventListener(type, callback)
   }
 
   loadDesign = (design) => {
-    unlayer.loadDesign(design)
+    this.editor.loadDesign(design)
   }
 
   saveDesign = (callback) => {
-    unlayer.saveDesign(callback)
+    this.editor.saveDesign(callback)
   }
 
   exportHtml = (callback) => {
-    unlayer.exportHtml(callback)
+    this.editor.exportHtml(callback)
   }
 
   setMergeTags = (mergeTags) => {
-    unlayer.setMergeTags(mergeTags)
+    this.editor.setMergeTags(mergeTags)
   }
 }
