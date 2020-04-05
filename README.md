@@ -84,7 +84,9 @@ See the [example source](https://github.com/unlayer/react-email-editor/blob/mast
 
 Custom tools can help you add your own content blocks to the editor. Every application is different and needs different tools to reach it's full potential. [Learn More](https://docs.unlayer.com/docs/custom-tools)
 
-[![Custom Tools](https://unlayer.com/assets/images/features/custom_tools.png)](https://docs.unlayer.com/docs/custom-tools)
+[![Custom Tools](https://unroll-assets.s3.amazonaws.com/custom_tools.png)](https://docs.unlayer.com/docs/custom-tools)
+
+
 
 
 ## Localization
@@ -93,4 +95,4 @@ You can submit new language translations by creating a PR on this GitHub repo: h
 
 ### License
 
-Copyright (c) 2019 Unlayer. [MIT](LICENSE) Licensed.
+Copyright (c) 2020 Unlayer. [MIT](LICENSE) Licensed.
