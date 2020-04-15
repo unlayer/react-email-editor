@@ -1,7 +1,29 @@
 import React, {Component} from 'react'
-import Script from 'react-load-script'
 
 export default class extends Component {
+  componentDidMount() {
+    const embedJs = "//editor.unlayer.com/embed.js?2"
+    const scripts = document.querySelectorAll('script');
+    let scriptLoaded = false
+
+    scripts.forEach(script => {
+      if (script.src.includes(embedJs)) {
+        scriptLoaded = true
+      }
+    })
+
+    if (!scriptLoaded) {
+      const unlayerScript = document.createElement('script');
+      unlayerScript.setAttribute('src', embedJs);
+      unlayerScript.onload = () => {
+        this.loadEditor();
+      };
+      document.head.appendChild(unlayerScript);
+    } else {
+      this.loadEditor();
+    }
+  }
+
   render() {
     let {
       props: {
@@ -16,11 +38,6 @@ export default class extends Component {
         display: 'flex',
         minHeight: minHeight
       }}>
-        <Script
-          url="https://editor.unlayer.com/embed.js?2"
-          onLoad={this.unlayerReady}
-        />
-
         <div
           id="editor"
           style={{...style, flex: 1}}
@@ -29,7 +46,7 @@ export default class extends Component {
     )
   }
 
-  unlayerReady = () => {
+  loadEditor = () => {
     const options = (this.props.options || {})
 
     if (this.props.projectId) {

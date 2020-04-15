@@ -18,9 +18,7 @@
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server"
   },
-  "dependencies": {
-    "react-load-script": "^0.0.6"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "react": "15.x || 16.x"
   },
