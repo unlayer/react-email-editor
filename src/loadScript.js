@@ -1,37 +1,45 @@
+const scriptUrl = '//editor.unlayer.com/embed.js?2';
 const callbacks = [];
+let loaded = false;
 
-const runCallbacks = () => {
-  let callback;
-
-  while ((callback = callbacks.shift())) {
-    callback();
-  }
-};
-
-const registerCallback = (callback) => {
-  callbacks.push(callback);
-};
-
-export const loadScript = (callback) => {
-  const embedJs = '//editor.unlayer.com/embed.js?2';
+const isScriptInjected = () => {
   const scripts = document.querySelectorAll('script');
-  let scriptLoaded = false;
+  let injected = false;
 
   scripts.forEach((script) => {
-    if (script.src.includes(embedJs)) {
-      scriptLoaded = true;
+    if (script.src.includes(scriptUrl)) {
+      injected = true;
     }
   });
 
-  registerCallback(callback);
+  return injected;
+};
 
-  if (!scriptLoaded) {
-    const unlayerScript = document.createElement('script');
-    unlayerScript.setAttribute('src', embedJs);
-    unlayerScript.onload = () => {
+const addCallback = (callback) => {
+  callbacks.push(callback);
+};
+
+const runCallbacks = () => {
+  if (loaded) {
+    let callback;
+
+    while ((callback = callbacks.shift())) {
+      callback();
+    }
+  }
+};
+
+export const loadScript = (callback) => {
+  addCallback(callback);
+
+  if (!isScriptInjected()) {
+    const embedScript = document.createElement('script');
+    embedScript.setAttribute('src', scriptUrl);
+    embedScript.onload = () => {
+      loaded = true;
       runCallbacks();
     };
-    document.head.appendChild(unlayerScript);
+    document.head.appendChild(embedScript);
   } else {
     runCallbacks();
   }
