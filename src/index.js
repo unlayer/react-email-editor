@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { loadScript } from './loadScript';
 
+let lastEditorId = 0;
+
 export default class extends Component {
   componentDidMount() {
     loadScript(this.loadEditor);
@@ -11,6 +13,8 @@ export default class extends Component {
       props: { minHeight = 500, style = {} },
     } = this;
 
+    this.editorId = `editor-${++lastEditorId}`;
+
     return (
       <div
         style={{
@@ -19,7 +23,7 @@ export default class extends Component {
           minHeight: minHeight,
         }}
       >
-        <div id="editor" style={{ ...style, flex: 1 }} />
+        <div id={this.editorId} style={{ ...style, flex: 1 }} />
       </div>
     );
   }
@@ -45,7 +49,7 @@ export default class extends Component {
 
     this.editor = unlayer.createEditor({
       ...options,
-      id: 'editor',
+      id: this.editorId,
       displayMode: 'email',
     });
 
