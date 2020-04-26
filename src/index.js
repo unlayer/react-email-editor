@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { loadScript } from './loadScript';
+import pkg from '../package.json';
 
 let lastEditorId = 0;
 
@@ -51,6 +52,10 @@ export default class extends Component {
       ...options,
       id: this.editorId,
       displayMode: 'email',
+      source: {
+        name: pkg.name,
+        version: pkg.version,
+      },
     });
 
     // All properties starting with on[Name] are registered as event listeners.
