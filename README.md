@@ -59,6 +59,14 @@ class App extends Component {
 
 render(<App />, document.getElementById('app'))
 ```
+### Methods
+| method          | params                   | description                                                    |
+| --------------- | ------------------------ | -------------------------------------------------------------- |
+| **loadDesign**  | `Object data`            | Takes the design JSON and loads it in the editor               |
+| **saveDesign**  | `Function callback`      | Returns the design JSON in a callback function                 |
+| **exportHtml**  | `Function callback`      | Returns the design HTML and JSON in a callback function        |
+
+See the [example source](https://github.com/unlayer/react-email-editor/blob/master/demo/src/index.js) for a reference implementation.
 
 ### Properties
 
@@ -71,14 +79,6 @@ render(<App />, document.getElementById('app'))
 * `projectId` `Integer` Unlayer project ID (optional)
 
 See the [Unlayer Docs](https://docs.unlayer.com/) for all available options.
-
-### Methods
-
-* `loadDesign` - `function(Object data)` - Takes the design JSON and loads it in the editor
-* `saveDesign` - `function(Function callback)` - Returns the design JSON in a callback function
-* `exportHtml` - `function(Function callback)` - Returns the design HTML and JSON in a callback function
-
-See the [example source](https://github.com/unlayer/react-email-editor/blob/master/demo/src/index.js) for a reference implementation.
 
 ## Custom Tools
 
