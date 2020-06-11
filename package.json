@@ -27,6 +27,7 @@
     "nwb": "^0.22.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-router-dom": "^5.2.0",
     "styled-components": "^4.2.0"
   },
   "author": "",
