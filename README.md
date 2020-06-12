@@ -52,6 +52,10 @@ const App = (props) => {
 
   return (
     <div>
+      <div>
+        <button onClick={exportHtml}>Export HTML</button>
+      </div>
+      
       <EmailEditor
         ref={emailEditorRef}
         onLoad={onLoad}
