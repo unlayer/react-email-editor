@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 
 import EmailEditor from '../../../src';
@@ -39,47 +39,48 @@ const Bar = styled.div`
   }
 `;
 
-export default class Example extends Component {
-  render() {
-    return (
-      <Container>
-        <Bar>
-          <h1>React Email Editor (Demo)</h1>
+const Example = (props) => {
+  const emailEditorRef = useRef(null);
 
-          <button onClick={this.saveDesign}>Save Design</button>
-          <button onClick={this.exportHtml}>Export HTML</button>
-        </Bar>
-
-        <EmailEditor
-          ref={(editor) => (this.editor = editor)}
-          onLoad={this.onLoad}
-          onDesignLoad={this.onDesignLoad}
-        />
-      </Container>
-    );
-  }
-
-  onLoad = () => {
-    // this.editor.addEventListener('onDesignLoad', this.onDesignLoad)
-    this.editor.loadDesign(sample);
-  };
-
-  saveDesign = () => {
-    this.editor.saveDesign((design) => {
+  const saveDesign = () => {
+    emailEditorRef.current.editor.saveDesign((design) => {
       console.log('saveDesign', design);
       alert('Design JSON has been logged in your developer console.');
     });
   };
 
-  exportHtml = () => {
-    this.editor.exportHtml((data) => {
+  const exportHtml = () => {
+    emailEditorRef.current.editor.exportHtml((data) => {
       const { design, html } = data;
       console.log('exportHtml', html);
       alert('Output HTML has been logged in your developer console.');
     });
   };
 
-  onDesignLoad = (data) => {
+  const onDesignLoad = (data) => {
     console.log('onDesignLoad', data);
   };
-}
+
+  const onLoad = () => {
+    emailEditorRef.current.editor.addEventListener('onDesignLoad', onDesignLoad);
+    emailEditorRef.current.editor.loadDesign(sample);
+  };
+
+  return (
+    <Container>
+      <Bar>
+        <h1>React Email Editor (Demo)</h1>
+
+        <button onClick={saveDesign}>Save Design</button>
+        <button onClick={exportHtml}>Export HTML</button>
+      </Bar>
+
+      <EmailEditor
+        ref={emailEditorRef}
+        onLoad={onLoad}
+      />
+    </Container>
+  );
+};
+
+export default Example;
