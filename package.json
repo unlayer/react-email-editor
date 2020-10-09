@@ -1,6 +1,6 @@
 {
   "name": "react-email-editor",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Unlayer's Email Editor Component for React.js",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -25,8 +25,8 @@
   },
   "devDependencies": {
     "nwb": "^0.22.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "styled-components": "^4.2.0"
   },

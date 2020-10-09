@@ -5,6 +5,12 @@ import pkg from '../package.json';
 let lastEditorId = 0;
 
 export default class extends Component {
+  constructor(props) {
+    super(props);
+
+    this.editorId = `editor-${++lastEditorId}`; 
+  }
+
   componentDidMount() {
     loadScript(this.loadEditor);
   }
@@ -13,8 +19,6 @@ export default class extends Component {
     let {
       props: { minHeight = 500, style = {} },
     } = this;
-
-    this.editorId = `editor-${++lastEditorId}`;
 
     return (
       <div

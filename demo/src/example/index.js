@@ -62,7 +62,10 @@ const Example = (props) => {
   };
 
   const onLoad = () => {
-    emailEditorRef.current.editor.addEventListener('onDesignLoad', onDesignLoad);
+    emailEditorRef.current.editor.addEventListener(
+      'onDesignLoad',
+      onDesignLoad
+    );
     emailEditorRef.current.editor.loadDesign(sample);
   };
 
@@ -75,10 +78,9 @@ const Example = (props) => {
         <button onClick={exportHtml}>Export HTML</button>
       </Bar>
 
-      <EmailEditor
-        ref={emailEditorRef}
-        onLoad={onLoad}
-      />
+      <React.StrictMode>
+        <EmailEditor ref={emailEditorRef} onLoad={onLoad} />
+      </React.StrictMode>
     </Container>
   );
 };
