@@ -68,9 +68,11 @@ export default class extends Component {
         this.addEventListener(key, value);
       }
     }
-
-    const { onLoad } = this.props;
-    onLoad && onLoad();
+    
+    this.editor.addEventListener('design:loaded', (data) => {
+      const { onLoad } = this.props;
+      onLoad && onLoad();
+    });
   };
 
   registerCallback = (type, callback) => {
