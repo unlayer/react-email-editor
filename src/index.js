@@ -8,7 +8,7 @@ export default class extends Component {
   constructor(props) {
     super(props);
 
-    this.editorId = `editor-${++lastEditorId}`; 
+    this.editorId = props.editorId || `editor-${++lastEditorId}`;
   }
 
   componentDidMount() {

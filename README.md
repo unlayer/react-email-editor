@@ -1,12 +1,11 @@
 # React Email Editor
 
-The excellent drag-n-drop email editor by [Unlayer](https://unlayer.com/embed) as a [React.js](http://facebook.github.io/react) *wrapper component*. This is the most powerful and developer friendly visual email builder for your app.
+The excellent drag-n-drop email editor by [Unlayer](https://unlayer.com/embed) as a [React.js](http://facebook.github.io/react) _wrapper component_. This is the most powerful and developer friendly visual email builder for your app.
 
-Video Overview |
-:---: |
-[![React Email Editor](https://unroll-assets.s3.amazonaws.com/unlayervideotour.png)](https://www.youtube.com/watch?v=MIWhX-NF3j8) |
-*Watch video overview: https://youtu.be/MIWhX-NF3j8* |
-
+|                                                          Video Overview                                                           |
+| :-------------------------------------------------------------------------------------------------------------------------------: |
+| [![React Email Editor](https://unroll-assets.s3.amazonaws.com/unlayervideotour.png)](https://www.youtube.com/watch?v=MIWhX-NF3j8) |
+|                                       _Watch video overview: https://youtu.be/MIWhX-NF3j8_                                        |
 
 ## Live Demo
 
@@ -30,7 +29,7 @@ Require the EmailEditor component and render it with JSX:
 
 ```javascript
 import React, { useRef } from 'react';
-import { render } from 'react-dom'
+import { render } from 'react-dom';
 
 import EmailEditor from 'react-email-editor';
 
@@ -55,35 +54,35 @@ const App = (props) => {
       <div>
         <button onClick={exportHtml}>Export HTML</button>
       </div>
-      
-      <EmailEditor
-        ref={emailEditorRef}
-        onLoad={onLoad}
-      />
+
+      <EmailEditor ref={emailEditorRef} onLoad={onLoad} />
     </div>
   );
 };
 
-render(<App />, document.getElementById('app'))
+render(<App />, document.getElementById('app'));
 ```
+
 ### Methods
-| method          | params                   | description                                                    |
-| --------------- | ------------------------ | -------------------------------------------------------------- |
-| **loadDesign**  | `Object data`            | Takes the design JSON and loads it in the editor               |
-| **saveDesign**  | `Function callback`      | Returns the design JSON in a callback function                 |
-| **exportHtml**  | `Function callback`      | Returns the design HTML and JSON in a callback function        |
+
+| method         | params              | description                                             |
+| -------------- | ------------------- | ------------------------------------------------------- |
+| **loadDesign** | `Object data`       | Takes the design JSON and loads it in the editor        |
+| **saveDesign** | `Function callback` | Returns the design JSON in a callback function          |
+| **exportHtml** | `Function callback` | Returns the design HTML and JSON in a callback function |
 
 See the [example source](https://github.com/unlayer/react-email-editor/blob/master/demo/src/index.js) for a reference implementation.
 
 ### Properties
 
-* `style` `Object` style object for the editor container (default {})
-* `minHeight` `String` minimum height to initialize the editor with (default 500px)
-* `onLoad` `Function` called when the editor has finished loading
-* `options` `Object` options passed to the Unlayer editor instance (default {})
-* `tools` `Object` configuration for the built-in and custom tools (default {})
-* `appearance` `Object` configuration for appearance and theme (default {})
-* `projectId` `Integer` Unlayer project ID (optional)
+- `editorId` `String` HTML div id of the container where the editor will be embedded (optional)
+- `style` `Object` style object for the editor container (default {})
+- `minHeight` `String` minimum height to initialize the editor with (default 500px)
+- `onLoad` `Function` called when the editor has finished loading
+- `options` `Object` options passed to the Unlayer editor instance (default {})
+- `tools` `Object` configuration for the built-in and custom tools (default {})
+- `appearance` `Object` configuration for appearance and theme (default {})
+- `projectId` `Integer` Unlayer project ID (optional)
 
 See the [Unlayer Docs](https://docs.unlayer.com/) for all available options.
 
@@ -92,9 +91,6 @@ See the [Unlayer Docs](https://docs.unlayer.com/) for all available options.
 Custom tools can help you add your own content blocks to the editor. Every application is different and needs different tools to reach it's full potential. [Learn More](https://docs.unlayer.com/docs/custom-tools)
 
 [![Custom Tools](https://unroll-assets.s3.amazonaws.com/custom_tools.png)](https://docs.unlayer.com/docs/custom-tools)
-
-
-
 
 ## Localization
 
