@@ -70,7 +70,7 @@ export default class extends Component {
     }
 
     const { onLoad } = this.props;
-    onLoad && onLoad();
+    onLoad && onLoad(this.editor);
   };
 
   registerCallback = (type, callback) => {
