@@ -62,6 +62,8 @@ export default class extends Component {
       },
     });
 
+    this.props.editorCallback(this);
+
     // All properties starting with on[Name] are registered as event listeners.
     for (const [key, value] of Object.entries(this.props)) {
       if (/^on/.test(key) && key != 'onLoad') {
