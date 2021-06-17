@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import EmailEditor from '../../../src';
@@ -40,17 +40,18 @@ const Bar = styled.div`
 `;
 
 const Example = (props) => {
-  const emailEditorRef = useRef(null);
+  const [page, setPage] = useState(1);
+  let emailEditorRef;
 
   const saveDesign = () => {
-    emailEditorRef.current.editor.saveDesign((design) => {
+    emailEditorRef.saveDesign((design) => {
       console.log('saveDesign', design);
       alert('Design JSON has been logged in your developer console.');
     });
   };
 
   const exportHtml = () => {
-    emailEditorRef.current.editor.exportHtml((data) => {
+    emailEditorRef.exportHtml((data) => {
       const { design, html } = data;
       console.log('exportHtml', html);
       alert('Output HTML has been logged in your developer console.');
@@ -62,11 +63,11 @@ const Example = (props) => {
   };
 
   const onLoad = () => {
-    emailEditorRef.current.editor.addEventListener(
+    emailEditorRef.addEventListener(
       'onDesignLoad',
       onDesignLoad
     );
-    emailEditorRef.current.editor.loadDesign(sample);
+    emailEditorRef.loadDesign(sample);
   };
 
   return (
@@ -79,7 +80,7 @@ const Example = (props) => {
       </Bar>
 
       <React.StrictMode>
-        <EmailEditor ref={emailEditorRef} onLoad={onLoad} />
+        <EmailEditor editorCallback={editor => emailEditorRef = editor} onLoad={onLoad} />
       </React.StrictMode>
     </Container>
   );
