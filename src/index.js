@@ -62,9 +62,9 @@ export default class extends Component {
       },
     });
 
-    const { editorCallback } = this.props;
+    const { emailEditorCallback } = this.props;
 
-    if (editorCallback) editorCallback(this);
+    if (emailEditorCallback) emailEditorCallback(this);
 
     // All properties starting with on[Name] are registered as event listeners.
     for (const [key, value] of Object.entries(this.props)) {

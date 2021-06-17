@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import EmailEditor from '../../../src';
@@ -40,7 +40,6 @@ const Bar = styled.div`
 `;
 
 const Example = (props) => {
-  const [page, setPage] = useState(1);
   let emailEditorRef;
 
   const saveDesign = () => {
@@ -80,7 +79,7 @@ const Example = (props) => {
       </Bar>
 
       <React.StrictMode>
-        <EmailEditor editorCallback={editor => emailEditorRef = editor} onLoad={onLoad} />
+        <EmailEditor emailEditorCallback={editor => emailEditorRef = editor} onLoad={onLoad} />
       </React.StrictMode>
     </Container>
   );
