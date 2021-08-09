@@ -28,13 +28,13 @@ npm install react-email-editor --save
 Require the EmailEditor component and render it with JSX:
 
 ```javascript
-import React from 'react';
+import React, { useRef } from 'react';
 import { render } from 'react-dom';
 
 import EmailEditor from 'react-email-editor';
 
 const App = (props) => {
-  let emailEditorRef;
+  let emailEditorRef = useRef(null);
 
   const exportHtml = () => {
     emailEditorRef.exportHtml((data) => {

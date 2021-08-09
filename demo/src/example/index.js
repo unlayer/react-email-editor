@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 
 import EmailEditor from '../../../src';
@@ -40,7 +40,7 @@ const Bar = styled.div`
 `;
 
 const Example = (props) => {
-  let emailEditorRef;
+  let emailEditorRef = useRef(null);
 
   const saveDesign = () => {
     emailEditorRef.saveDesign((design) => {
