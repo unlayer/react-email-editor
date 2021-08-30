@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Security-Policy" content="default-src chrome:; img-src data: *; media-src *; object-src 'none'" />
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <meta name="viewport" content="width=device-width; user-scalable=0" />
+  <link rel="stylesheet" href="chrome://global/skin/aboutReader.css" type="text/css"/>
+</head>
+
+<body>
+  <div class="top-anchor"></div>
+
+  <div id="toolbar" class="toolbar-container">
+    <div class="toolbar reader-toolbar">
+      <div class="reader-controls">
+        <button class="close-button button " data-telemetry-id="reader-close"></button>
+        <ul class="dropdown style-dropdown">
+          <li>
+            <button class="dropdown-toggle button style-button" data-telemetry-id="reader-type-controls"></button>
+          </li>
+          <li class="dropdown-popup">
+            <div class="dropdown-arrow"></div>
+            <div class="font-type-buttons radiorow"></div>
+            <div class="font-size-buttons buttonrow">
+              <button class="minus-button"></button>
+              <span class="font-size-value"></span>
+              <button class="plus-button"/>
+            </div>
+            <div class="content-width-buttons buttonrow">
+               <button class="content-width-minus-button"></button>
+               <span class="content-width-value"></span>
+               <button class="content-width-plus-button"/>
+            </div>
+            <div class="line-height-buttons buttonrow">
+                <button class="line-height-minus-button"></button>
+                <span class="line-height-value"></span>
+                <button class="line-height-plus-button"/>
+            </div>
+            <div class="color-scheme-buttons radiorow"></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+<map name="workmap">
+  <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+  <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+  <area shape="circle" coords="337,300,44" alt="Cup of coffee" href="coffee.htm">
+</map>
+<!-- as it is a survey form, we will need to submit the details, hence we use form -->
+<!-- We can give absolute url, or relative url like /nextpage.jsp, and specify POST or GET method -->
+<form action="http://google.co.in">
+<!-- If we remove this, every thing will move to the left of the page-->
+<div align="center"> 
+<!--Adds a heading to the form-->
+<h1>Hacking Tutorial</h1>
+Enter your name:
+<!-- Input type text for small texts, specify size -->
+<input type="text" name="UserName" size=35 maxlength=35 value="">
+<!--Adds spaces - remove and see what happens -->
+</br></br>
+Enter your department:
+<input type="text" name="Deptt" size=35 maxlength=35 value=""> </br> </br>
+Tell us a little about yourself:
+<!-- For writing lot of text like descriptions with text wrapping,a
+if you dont want text wrapping, you can add wrap = "off" (horizontal scrollbar -->
+<textarea name="Comments" cols=30 rows=4></textarea> </br> </br>
+Do you exercise at home?
+<!-- Radio buttons help you choose one out of the many values -->
+<input type="radio" name="exe" value=1>Yes
+<input type="radio" name="exe" value=2>No
+</p>
+How do you like to read about your favorite topics?
+<p>
+<!--Checkbox lets you select multiple options -->
+<input type="checkbox" name="Books">Books
+<input type="checkbox" name="Web">Online resources
+<input type="checkbox" name="Phone">Phone apps
+<input type="checkbox" name="Magazines">Magazines
+</p>
+
+<map name="workmap">
+<h1 class="display-1">Display 1</h1>
+<h1 class="display-2">Display 2</h1>
+<h1 class="display-3">Display 3</h1>
+<h1 class="display-4">Display 4</h1>
+<h1 class="display-5">Display 5</h1>
+<h1 class="display-6">Display 6</h1>
+<dl class="row">
+  <dt class="col-sm-3">Description lists</dt>
+  <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
+
+  <dt class="col-sm-3">Euismod</dt>
+  <dd class="col-sm-9">
+    <p>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</p>
+    <p>Donec id elit non mi porta gravida at eget metus.</p>
+  </dd>
+
+  <dt class="col-sm-3">Malesuada porta</dt>
+  <dd class="col-sm-9">Etiam porta sem malesuada magna mollis euismod.</dd>
+
+  <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
+  <dd class="col-sm-9">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+
+  <dt class="col-sm-3">Nesting</dt>
+  <dd class="col-sm-9">
+    <dl class="row">
+      <dt class="col-sm-4">Nested definition list</dt>
+      <dd class="col-sm-8">Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.</dd>
+    </dl>
+  </dd>
+</dl>
+
+What genre of movies do you like?
+<!--Select box lets you choose one of the multiple dropdown options-->
+<select name="moviepref" ><option>
+<option value=1 selected = "true">comedy
+<option value=2 >romance
+<option value=3 >thriller
+<option value=4 >horror
+<option value=5 >biopic
+</select>
+</br></br>
+<!--submits the information entered in the form by the user -->
+<input type=submit value="Submit form">
+</div>
+</form>
+</body>
+<!--This example uses the default bootstrap stylesheet-->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!--provides a full-width container that can expand or collapse based on the size of viewport-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 col-sm-12 col-xs-12">
+            <nav id="navbar">
+                <h3>Technical Documentation</h3>
+                <!--content stacking for smaller screens-->
+                <ul class="nav nav-pills nav-stacked">
+                 <!--internal linking to the respective sections-->
+                    <a class="nav-link" href="#Introduction" rel="internal">
+                        <li>Introduction</li>
+                    </a>
+                    <a class="nav-link" href="#What_you_should_already_know" rel="internal">
+                        <li>What you should already know</li>
+                    </a>
+                    <a class="nav-link" href="#About_Topic" rel="internal">
+                        <li>About the topic</li>
+                    </a>
+                    <a class="nav-link" href="#Topic_1" rel="internal">
+                        <li>Topic 1</li>
+                    </a>
+                    <a class="nav-link" href="#Topic_2" rel="internal">
+                        <li>Topic 2</li>
+                    </a>
+                 </ul>
+            </nav>
+        </div>
+        <div class="col-md-10 col-sm-12 col-xs-12">
+            <main id="main-doc">
+                <section class="main-section" id="Introduction" >
+                 <!--basic styling for the headings, better practice to do the same in a css file as the styling is same for all headers-->
+                    <h3 style = "background: black; color: white">Introduction</h3>
+                    <article>
+                    <p>Some content about the main topic, for example Java documentation introduction about the language
+                        </article>
+                </section>
+                <section class="main-section" id="What_you_should_already_know">
+                    <h3 style = "background: black; color: white">What you should already know</h3>
+                    <article>
+                        <p>Background information before getting into the topic:</p>
+<!--creating list using html-->
+                        <li>Some list content</li>
+                        <li>Prerequisites.</li>
+                        <li>Workings and assumptions</li>
+                        <p>Any other content to be covered before learning this topic</p>
+                        </artice>
+                </section>
+                <section class="main-section" id="About_Topic">
+                    <h3 style = "background: black; color: white">About topic</h3>
+                    <article>
+                        <p>More lines about the topic. For example, how the basic functionality works, features etc...</p>
+                        <p>
+                        Technical documentation should be thorough and to the point
+                        </p>
+                        <p>
+                        Write about features, comparisons with other languages etc
+                        </p>
+                    </article>
+                </section>
+                <section class="main-section" id="Topic_1">
+                    <h3 style = "background: black; color: white">Topic 1</h3>
+                    <article>
+                        Getting started with the actual documentation content
+                        <code>This would come in a different color and font indicating lines of code
+                        </code>
+                    </article>
+                </section>
+                <section class="main-section" id="Topic_2">
+                    <h3 style = "background: black; color: white">Topic 2</h3>
+                    <p>
+Another topic about the main topic, for example, if the topic is Java, this could be variables or data types in Java
+                    </p>
+                </section>
+            </main>
+        </div>
+    </div>
+</div>
+html>
+<head>
+<title></title>
+<!-- Apply styles to html elements -->
+<style>
+*{
+margin:0; padding:0; boxsizing:border-box;
+}
+header{
+width: 100%; height: 100vh;
+background-color: white;
+background-repeat: no-repeat;
+background-size: cover;
+<img style="border:10px solid black;" src="//www.html.am/images/image-codes/milford_sound_t.jpg" width="225" height="151" alt="Photo of Milford Sound in New Zealand" />
+
+<img src="Firefox_wallpaper.png" class="rounded float-start" alt="/home/abihishek"> 
+
+}
+nav{
+width: 100%; height: 15vh;
+background: black;
+display: flex; justify-content: space-between;
+align-items: center;
+}
+nav .mainmenu{
+width: 40%;
+display: flex; justify-content: space-around;
+}
+main{
+width: 100%; height: 85vh;
+display: flex; justify-content: center;
+align-items: center;
+text-align: center;
+}
+section h3{
+letter-spacing: 3px; font-weight: 200;
+}
+section h1{
+text-transform: uppercase;
+}
+section div{
+animation:changeborder 10s infinite linear;
+border: 7px solid red;
+}
+@keyframes changeborder{
+0%
+20%
+40%
+}
+</style>
+</head>
+<body>
+<!--Let us create a simple menu using the navigation tags-->
+<!--Use header to indicate that manu will be a part of header -->
+<header>
+<nav>
+<div class = "logo" <h3 style="color:white;">MYLOGO</h3></div>
+<!--Lets define the menu items now-->
+<div class = "mainmenu">
+<a href="https://hackr.io/tutorials/learn-html-5">Home</a>
+<a href="https://hackr.io/tutorials/learn-html-5">About Us</a>
+<a href="https://hackr.io/tutorials/learn-html-5">Contact Us</a>
+</div>
+<html>
+<head>
+    <style>
+        body{
+   font-size:20px;
+            color: white;
+            background-size: cover;
+        }
+         .box{ width: 900px;
+       float:right;
+       border:1px solid none;}
+       .box ul li{
+           width: 120px;
+           float:left;
+           margin: 10px auto;
+           text-align: center;
+       }
+ .mainmenu
+.mainmenu a
+.mainmenu a:hover
+.mainmenu img{
+position: fixed;
+z-index: -1;
+top:0px; left:0px; width:100%; height: 100vh;
+opacity: 0.9;
+/*object-fit:cover;*/
+transition: all ease 0.5s;
+}
+   .wd{
+           width: 300px;
+           height: 539px;
+           background-color: black;
+           opacity: 0.8;
+           padding: 55px;
+       }
+       .wd h1{
+           text-align: center;
+           text-transform: uppercase;
+           font-weight: 300px;
+       }
+       .wd h4{
+           text-align: justify;
+           color:darkgray;
+           font-weight: 100px;
+       }
+       .wd h2{
+           text-align: center;
+           text-transform: uppercase;
+           font-weight: normal;
+           margin: 40px auto;
+       }
+  <div class="container">
+    <div class="header reader-header">
+      <a class="domain reader-domain"></a>
+      <div class="domain-border"></div>
+      <h1 class="reader-title"></h1>
+      <div class="credits reader-credits"></div>
+      <div class="meta-data">
+        <div class="reader-estimated-time"></div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="content">
+      <div class="moz-reader-content"></div>
+    </div>
+
+    <div>
+      <div class="reader-message"></div>
+    </div>
+    <div aria-owns="toolbar"></div>
+  </div>
+</body>
+     .opt form , input[type="button"]{
+           background-color: black;
+           color:white;
+         /* padding:10px;*/
+           margin:-14px auto;
+           padding-left: 50px;
+           padding-right: 50px;
+           text-align: center;
+           font-size: 16px;
+       }
+     form, input[type="button"] {
+       animation: glowing 300ms infinite;
+       font-weight: 500%;
+      }
+      @keyframes glowing {
+ 0% {
+   background-color: red;
+ }
+ 50% {
+   background-color: orange;
+ }
+ 100% {
+   background-color: blue;
+ }
+}
+   </style>
+</head>
+<html>
+<head>
+    <style>
+        body{
+   font-size:20px;
+            color: white;
+            background-size: cover;
+        }
+         .box{ width: 900px;
+       float:right;
+       border:1px solid none;}
+       .box ul li{
+           width: 120px;
+           float:left;
+           margin: 10px auto;
+           text-align: center;
+       }
+ .mainmenu
+.mainmenu a
+.mainmenu a:hover
+.mainmenu img{
+position: fixed;
+z-index: -1;
+top:0px; left:0px; width:100%; height: 100vh;
+opacity: 0.9;
+/*object-fit:cover;*/
+transition: all ease 0.5s;
+}
+   .wd{
+           width: 300px;
+           height: 539px;
+           background-color: black;
+           opacity: 0.8;
+           padding: 55px;
+       }
+       .wd h1{
+           text-align: center;
+           text-transform: uppercase;
+           font-weight: 300px;
+       }
+       .wd h4{
+           text-align: justify;
+           color:darkgray;
+           font-weight: 100px;
+       }
+       .wd h2{
+           text-align: center;
+           text-transform: uppercase;
+           font-weight: normal;
+           margin: 40px auto;
+       }
+       .opt form , input[type="button"]{
+           background-color: black;
+           color:white;
+         /* padding:10px;*/
+           margin:-14px auto;
+           padding-left: 50px;
+           padding-right: 50px;
+           text-align: center;
+           font-size: 16px;
+       }
+     form, input[type="button"] {
+       animation: glowing 300ms infinite;
+       font-weight: 500%;
+      }
+      @keyframes glowing {
+ 0% {
+   background-color: red;
+ }
+ 50% {
+   background-color: orange;
+ }
+ 100% {
+   background-color: blue;
+ }
+}
+
+.slider
+{
+    width: 85%;
+    margin-left: 15%;
+    padding: 0 10px;
+}
+
+.carousel
+{
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+}
+.carousel-indicators
+{
+    z-index: 1 !important;
+}
+@media only screen and (max-width: 980px)
+{
+    .slider
+    {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/*--------------------featured-categories------------------*/
+
+.featured-categories 
+{
+    margin: 50px 0;
+}
+.featured-categories img
+{
+    width: 100%;
+    padding: 20px 0;
+    transition: 1s;
+    cursor: pointer;
+}
+.featured-categories img:hover
+{
+    transform: scale(1.1);
+}
+/*------------------On-sale-product---------------------*/
+
+.title-box
+{
+    background: orange;
+    color: #fff;
+    width: 180px;
+    padding: 4px 10px;
+    height: 40px;
+    margin-bottom: 30px;
+    display: flex; 
+}
+.title-box h2
+{
+    font-size: 24px;
+}
+.title-box::after
+{
+    content: '';
+    border-top: 40px solid orange;
+    border-right: 50px solid transparent;
+    position: absolute;
+    display: flex;
+    margin-top: -40px;
+    margin-left: 170px;
+}
+   </style>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(function(){
+var image = $(".mainmenu").find('img').attr('src');
+$(".mainmenu a").mouseover(function(){
+var newimg = $(this).attr('data-image');
+$(this).parent().find('img').attr("src", newimg);
+});
+});
+</script>
+   <div class="box">
+<div class="mainmenu">
+<img src="food.png">
+<a data-image = "food.png" href=""> Home</a>
+<a data-image = "menucard.jpg" href=""> Menu</a>
+<a href=""> FAQ</a>
+<a href=""> Contact</a>
+</div>
+   </div>
+   <div class="wd">
+<h1> Welcome to xxx</h1>
+<h4> <i>Order delicious food online, 100% quality, safety and taste assured.</i></h4>
+<h2> Call 999999999 for reservations</h2>
+<div class="opt">
+<form action="" method="post">
+<input type="button" value="ORDER NOW">
+</form>
+</div>
+</div>
+</body>
+
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(function(){
+var image = $(".mainmenu").find('img').attr('src');
+$(".mainmenu a").mouseover(function(){
+var newimg = $(this).attr('data-image');
+$(this).parent().find('img').attr("src", newimg);
+});
+});
+</script>
+   <div class="box">
+<div class="mainmenu">
+<img src="src="workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+
+<map name="workmap">
+  <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+  <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+  <area shape="circle" coords="337,300,44" alt="Cup of coffee" href="coffee.htm">
+</map>.png">
+<a data-image = "food.png" href=""> Home</a>
+<a data-image = "menucard.jpg" href=""> Menu</a>
+<a href=""> FAQ</a>
+<a href=""> Contact</a>
+</div>
+   </div>
+   <div class="wd">
+<h1> Welcome to Hacker world</h1>
+<h4> <i>Order delicious food online, 100% quality, safety and taste assured.</i></h4>
+<h2> Call 6388433023for reservations</h2>
+<div class="opt">
+<form action="" method="post">
+<input type="button" value="ORDER NOW">
+</form>
+</div>
+</div>
+</body>
+</nav>
+<!--Let us create the main section now, if you are not using html5, use div tags-->
+<main>
+<section>
+<!--Check out the styling elements for this div class - change_text -->
+<div class = "change_text"><b>WELCOME TO HACKERTOOLS</b></div>
+<!--make text italic-->
+<p><i>All your electronics needs in one place</i></p><br>
+<!--create a button, if there is a form, you can specify an action on click-->
+<input type = button value = "view more">
+</section>
+</main>
+</header>
+</body>
+
+
+</html>
