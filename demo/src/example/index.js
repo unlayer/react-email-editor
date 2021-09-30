@@ -61,11 +61,14 @@ const Example = (props) => {
     console.log('onDesignLoad', data);
   };
 
-  const onLoad = () => {
+  const onReady = () => {
+    console.log('onReady');
+
     emailEditorRef.current.editor.addEventListener(
-      'onDesignLoad',
+      'design:loaded',
       onDesignLoad
     );
+
     emailEditorRef.current.editor.loadDesign(sample);
   };
 
@@ -79,7 +82,7 @@ const Example = (props) => {
       </Bar>
 
       <React.StrictMode>
-        <EmailEditor ref={emailEditorRef} onLoad={onLoad} />
+        <EmailEditor ref={emailEditorRef} onReady={onReady} />
       </React.StrictMode>
     </Container>
   );
