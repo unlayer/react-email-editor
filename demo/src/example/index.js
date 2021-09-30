@@ -61,18 +61,15 @@ const Example = (props) => {
     console.log('onDesignLoad', data);
   };
 
-  // called when the editor is created
-  const onLoad = () => {
-    emailEditorRef.current.editor.addEventListener(
-      'onDesignLoad',
-      onDesignLoad
-    );
-    emailEditorRef.current.editor.loadDesign(sample);
-  };
-
-  // called when the editor has finished loading all custom css/js/fonts
   const onReady = () => {
     console.log('onReady');
+
+    emailEditorRef.current.editor.addEventListener(
+      'design:loaded',
+      onDesignLoad
+    );
+
+    emailEditorRef.current.editor.loadDesign(sample);
   };
 
   return (
@@ -85,7 +82,7 @@ const Example = (props) => {
       </Bar>
 
       <React.StrictMode>
-        <EmailEditor ref={emailEditorRef} onLoad={onLoad} onReady={onReady} />
+        <EmailEditor ref={emailEditorRef} onReady={onReady} />
       </React.StrictMode>
     </Container>
   );

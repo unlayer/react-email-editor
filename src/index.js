@@ -71,6 +71,7 @@ export default class extends Component {
 
     const { onLoad, onReady } = this.props;
 
+    // @deprecated
     onLoad && onLoad();
 
     if (onReady) this.editor.addEventListener('editor:ready', onReady);
