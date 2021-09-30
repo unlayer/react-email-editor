@@ -79,6 +79,7 @@ See the [example source](https://github.com/unlayer/react-email-editor/blob/mast
 - `editorId` `String` HTML div id of the container where the editor will be embedded (optional)
 - `style` `Object` style object for the editor container (default {})
 - `minHeight` `String` minimum height to initialize the editor with (default 500px)
+- `onLoad` `Function` called when the editor instance is created
 - `onReady` `Function` called when the editor has finished loading
 - `options` `Object` options passed to the Unlayer editor instance (default {})
 - `tools` `Object` configuration for the built-in and custom tools (default {})
