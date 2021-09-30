@@ -43,10 +43,16 @@ const App = (props) => {
     });
   };
 
+  // called when the editor is created
   const onLoad = () => {
     // you can load your template here;
     // const templateJson = {};
     // emailEditorRef.current.editor.loadDesign(templateJson);
+  };
+
+  // called when the editor has finished loading all custom css/js/fonts
+  const onReady = () => {
+    console.log('onReady');
   };
 
   return (
@@ -55,7 +61,7 @@ const App = (props) => {
         <button onClick={exportHtml}>Export HTML</button>
       </div>
 
-      <EmailEditor ref={emailEditorRef} onLoad={onLoad} />
+      <EmailEditor ref={emailEditorRef} onLoad={onLoad} onReady={onReady} />
     </div>
   );
 };
@@ -78,7 +84,8 @@ See the [example source](https://github.com/unlayer/react-email-editor/blob/mast
 - `editorId` `String` HTML div id of the container where the editor will be embedded (optional)
 - `style` `Object` style object for the editor container (default {})
 - `minHeight` `String` minimum height to initialize the editor with (default 500px)
-- `onLoad` `Function` called when the editor has finished loading
+- `onLoad` `Function` called when the editor is created
+- `onReady` `Function` called when the editor has finished loading all custom css/js/fonts
 - `options` `Object` options passed to the Unlayer editor instance (default {})
 - `tools` `Object` configuration for the built-in and custom tools (default {})
 - `appearance` `Object` configuration for appearance and theme (default {})
