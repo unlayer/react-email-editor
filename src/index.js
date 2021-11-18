@@ -12,7 +12,7 @@ export default class extends Component {
   }
 
   componentDidMount() {
-    loadScript(this.loadEditor);
+    loadScript(this.loadEditor, this.props.scriptUrl);
   }
 
   render() {
