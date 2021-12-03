@@ -21,7 +21,7 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "react": "15.x || 16.x"
+    "react": "15.x || 16.x || 17.x"
   },
   "devDependencies": {
     "nwb": "^0.22.0",
