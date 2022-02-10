@@ -62,11 +62,18 @@ const Example = (props) => {
   };
 
   const onLoad = () => {
+    console.log('onLoad');
+
     emailEditorRef.current.editor.addEventListener(
-      'onDesignLoad',
+      'design:loaded',
       onDesignLoad
     );
+
     emailEditorRef.current.editor.loadDesign(sample);
+  }
+
+  const onReady = () => {
+    console.log('onReady');
   };
 
   return (
@@ -79,7 +86,7 @@ const Example = (props) => {
       </Bar>
 
       <React.StrictMode>
-        <EmailEditor ref={emailEditorRef} onLoad={onLoad} />
+        <EmailEditor ref={emailEditorRef} onLoad={onLoad} onReady={onReady} />
       </React.StrictMode>
     </Container>
   );

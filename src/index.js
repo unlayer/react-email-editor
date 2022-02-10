@@ -8,11 +8,11 @@ export default class extends Component {
   constructor(props) {
     super(props);
 
-    this.editorId = `editor-${++lastEditorId}`;
+    this.editorId = props.editorId || `editor-${++lastEditorId}`;
   }
 
   componentDidMount() {
-    loadScript(this.loadEditor);
+    loadScript(this.loadEditor, this.props.scriptUrl);
   }
 
   render() {
@@ -65,13 +65,17 @@ export default class extends Component {
 
     // All properties starting with on[Name] are registered as event listeners.
     for (const [key, value] of Object.entries(this.props)) {
-      if (/^on/.test(key) && key != 'onLoad') {
+      if (/^on/.test(key) && key !== 'onLoad' && key !== 'onReady') {
         this.addEventListener(key, value);
       }
     }
 
-    const { onLoad } = this.props;
+    const { onLoad, onReady } = this.props;
+
+    // @deprecated
     onLoad && onLoad();
+
+    if (onReady) this.editor.addEventListener('editor:ready', onReady);
   };
 
   registerCallback = (type, callback) => {
