@@ -48,7 +48,7 @@ const App = (props) => {
     // you can load your template here;
     // const templateJson = {};
     // emailEditorRef.current.editor.loadDesign(templateJson);
-  }
+  };
 
   const onReady = () => {
     // editor is ready
@@ -61,7 +61,12 @@ const App = (props) => {
         <button onClick={exportHtml}>Export HTML</button>
       </div>
 
-      <EmailEditor ref={emailEditorRef} onLoad={onLoad} onReady={onReady} />
+      <EmailEditor
+        displayMode="web"
+        ref={emailEditorRef}
+        onLoad={onLoad}
+        onReady={onReady}
+      />
     </div>
   );
 };
@@ -90,6 +95,7 @@ See the [example source](https://github.com/unlayer/react-email-editor/blob/mast
 - `tools` `Object` configuration for the built-in and custom tools (default {})
 - `appearance` `Object` configuration for appearance and theme (default {})
 - `projectId` `Integer` Unlayer project ID (optional)
+- `displayMode` `String` configuration for display mode (`web` or `email`) (default `email`)
 
 See the [Unlayer Docs](https://docs.unlayer.com/) for all available options.
 
@@ -105,4 +111,4 @@ You can submit new language translations by creating a PR on this GitHub repo: h
 
 ### License
 
-Copyright (c) 2022 Unlayer. [MIT](LICENSE) Licensed.
+Copyright (c) 2021 Unlayer. [MIT](LICENSE) Licensed.
