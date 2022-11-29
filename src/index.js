@@ -95,8 +95,8 @@ export default class extends Component {
     this.editor.saveDesign(callback);
   };
 
-  exportHtml = (callback) => {
-    this.editor.exportHtml(callback);
+  exportHtml = (callback, options) => {
+    this.editor.exportHtml(callback, options);
   };
 
   setMergeTags = (mergeTags) => {
