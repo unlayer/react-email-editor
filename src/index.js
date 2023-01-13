@@ -35,7 +35,8 @@ export default class extends Component {
 
   loadEditor = () => {
     const options = this.props.options || {};
-    const displayMode = this.props.displayMode || 'email';
+    const displayMode =
+      this.props.displayMode || options.displayMode || 'email';
 
     if (this.props.projectId) {
       options.projectId = this.props.projectId;
