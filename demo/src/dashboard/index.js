@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-
-import { Switch, Route, Link, useRouteMatch } from 'react-router-dom';
+import React from 'react';
+import { Switch, Route, useRouteMatch } from 'react-router-dom';
 
 import DesignList from './DesignList';
 import DesignEdit from './DesignEdit';
 
-const Dashboard = (props) => {
+const Dashboard = () => {
   const match = useRouteMatch();
 
   return (

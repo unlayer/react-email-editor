@@ -1,62 +1,49 @@
-import React, { Component } from 'react';
-import { loadScript } from './loadScript';
+import React, {
+  useEffect,
+  useRef,
+  useState,
+  useImperativeHandle,
+  useCallback,
+} from 'react';
+
 import pkg from '../package.json';
+import { loadScript } from './loadScript';
 
 let lastEditorId = 0;
 
-export default class extends Component {
-  constructor(props) {
-    super(props);
+const Editor = (props, ref) => {
+  const { minHeight = 500, style = {} } = props;
 
-    this.editorId = props.editorId || `editor-${++lastEditorId}`;
+  const isLoaded = useRef(false);
+
+  const [editor, setEditor] = useState(null);
+
+  const editorId = props.editorId || `editor-${++lastEditorId}`;
+
+  function addEventListener(type, callback) {
+    editor.addEventListener(type, callback);
   }
 
-  componentDidMount() {
-    loadScript(this.loadEditor, this.props.scriptUrl);
-  }
+  function loadEditor() {
+    const { onLoad, onReady } = props;
 
-  render() {
-    let {
-      props: { minHeight = 500, style = {} },
-    } = this;
+    if (isLoaded.current) return;
 
-    return (
-      <div
-        style={{
-          flex: 1,
-          display: 'flex',
-          minHeight: minHeight,
-        }}
-      >
-        <div id={this.editorId} style={{ ...style, flex: 1 }} />
-      </div>
-    );
-  }
+    isLoaded.current = true;
 
-  loadEditor = () => {
-    if (this.loaded) return
-    this.loaded = true
-    const options = this.props.options || {};
+    const options = props.options || {};
 
-    if (this.props.projectId) {
-      options.projectId = this.props.projectId;
-    }
+    if (props.projectId) options.projectId = props.projectId;
 
-    if (this.props.tools) {
-      options.tools = this.props.tools;
-    }
+    if (props.tools) options.tools = props.tools;
 
-    if (this.props.appearance) {
-      options.appearance = this.props.appearance;
-    }
+    if (props.appearance) options.appearance = props.appearance;
 
-    if (this.props.locale) {
-      options.locale = this.props.locale;
-    }
+    if (props.locale) options.locale = props.locale;
 
-    this.editor = unlayer.createEditor({
+    const _editor = unlayer.createEditor({
       ...options,
-      id: this.editorId,
+      id: editorId,
       displayMode: 'email',
       source: {
         name: pkg.name,
@@ -64,42 +51,84 @@ export default class extends Component {
       },
     });
 
+    setEditor(_editor);
+
     // All properties starting with on[Name] are registered as event listeners.
-    for (const [key, value] of Object.entries(this.props)) {
+    for (const [key, value] of Object.entries(props)) {
       if (/^on/.test(key) && key !== 'onLoad' && key !== 'onReady') {
-        this.addEventListener(key, value);
+        addEventListener(key, value);
       }
     }
-
-    const { onLoad, onReady } = this.props;
 
     // @deprecated
     onLoad && onLoad();
 
-    if (onReady) this.editor.addEventListener('editor:ready', onReady);
-  };
+    if (onReady) _editor.addEventListener('editor:ready', onReady);
+  }
 
-  registerCallback = (type, callback) => {
-    this.editor.registerCallback(type, callback);
-  };
+  const registerCallback = useCallback(
+    (type, callback) => {
+      editor.registerCallback(type, callback);
+    },
+    [editor]
+  );
 
-  addEventListener = (type, callback) => {
-    this.editor.addEventListener(type, callback);
-  };
+  const loadDesign = useCallback(
+    (design) => {
+      editor.loadDesign(design);
+    },
+    [editor]
+  );
 
-  loadDesign = (design) => {
-    this.editor.loadDesign(design);
-  };
+  const saveDesign = useCallback(
+    (callback) => {
+      editor.saveDesign(callback);
+    },
+    [editor]
+  );
 
-  saveDesign = (callback) => {
-    this.editor.saveDesign(callback);
-  };
+  const exportHtml = useCallback(
+    (callback) => {
+      editor.exportHtml(callback);
+    },
+    [editor]
+  );
 
-  exportHtml = (callback) => {
-    this.editor.exportHtml(callback);
-  };
+  const setMergeTags = useCallback(
+    (mergeTags) => {
+      editor.setMergeTags(mergeTags);
+    },
+    [editor]
+  );
 
-  setMergeTags = (mergeTags) => {
-    this.editor.setMergeTags(mergeTags);
-  };
-}
+  useEffect(() => {
+    loadScript(loadEditor, props.scriptUrl);
+  }, []);
+
+  useImperativeHandle(
+    ref,
+    () => ({
+      saveDesign,
+      exportHtml,
+      setMergeTags,
+      editor,
+      loadDesign,
+      registerCallback,
+    }),
+    [editor]
+  );
+
+  return (
+    <div
+      style={{
+        flex: 1,
+        display: 'flex',
+        minHeight: minHeight,
+      }}
+    >
+      <div id={editorId} style={{ ...style, flex: 1 }} />
+    </div>
+  );
+};
+
+export default React.forwardRef(Editor);

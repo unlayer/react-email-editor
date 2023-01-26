@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import styled, { createGlobalStyle } from 'styled-components';
-
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { createGlobalStyle } from 'styled-components';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Example from './example';
 import Dashboard from './dashboard';
@@ -20,24 +19,22 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-class Demo extends Component {
-  render() {
-    return (
-      <Router>
-        <GlobalStyle />
+const Demo = () => {
+  return (
+    <Router>
+      <GlobalStyle />
 
-        <Switch>
-          <Route path={`/`} exact={true}>
-            <Example />
-          </Route>
+      <Switch>
+        <Route path={`/`} exact={true}>
+          <Example />
+        </Route>
 
-          <Route path={`/dashboard`}>
-            <Dashboard />
-          </Route>
-        </Switch>
-      </Router>
-    );
-  }
-}
+        <Route path={`/dashboard`}>
+          <Dashboard />
+        </Route>
+      </Switch>
+    </Router>
+  );
+};
 
 ReactDOM.render(<Demo />, document.querySelector('#demo'));

@@ -1,7 +1,6 @@
-import React, { Component, useRef } from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
-
-import { Switch, Route, Link, useRouteMatch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import EmailEditor from '../../../src';
 
@@ -54,7 +53,7 @@ const Bar = styled.div`
   }
 `;
 
-const DesignEdit = (props) => {
+const DesignEdit = () => {
   const ref = useRef(null);
 
   const saveDesign = () => {
@@ -66,7 +65,7 @@ const DesignEdit = (props) => {
 
   const exportHtml = () => {
     ref.current.exportHtml((data) => {
-      const { design, html } = data;
+      const { html } = data;
       console.log('exportHtml', html);
       alert('Output HTML has been logged in your developer console.');
     });
