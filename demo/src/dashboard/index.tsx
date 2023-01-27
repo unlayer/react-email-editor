@@ -1,24 +1,16 @@
 import React from 'react';
-import { Switch, Route, useRouteMatch } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import DesignList from './DesignList';
 import DesignEdit from './DesignEdit';
 
 const Dashboard = () => {
-  const match = useRouteMatch();
-
   return (
-    <Switch>
-      <Route path={match.path} exact={true}>
-        <DesignList />
-      </Route>
-      <Route path={`${match.path}/new`} exact={true}>
-        <DesignEdit />
-      </Route>
-      <Route path={`${match.path}/edit/:designId`} exact={true}>
-        <DesignEdit />
-      </Route>
-    </Switch>
+    <Routes>
+      <Route path="/" element={<DesignList />} />
+      <Route path={`/design/new`} element={<DesignEdit />} />
+      <Route path={`/design/edit/:designId`} element={<DesignEdit />} />
+    </Routes>
   );
 };
 

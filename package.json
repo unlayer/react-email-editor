@@ -2,33 +2,44 @@
   "name": "react-email-editor",
   "version": "1.6.3",
   "description": "Unlayer's Email Editor Component for React.js",
-  "main": "lib/index.js",
-  "module": "es/index.js",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "files": [
-    "css",
-    "es",
-    "lib",
-    "umd"
+    "dist",
+    "src"
   ],
+  "engines": {
+    "node": ">=10"
+  },
   "scripts": {
-    "build": "nwb build-react-component",
-    "clean": "nwb clean-module && nwb clean-demo",
-    "start": "nwb serve-react-demo",
-    "test": "nwb test-react",
-    "test:coverage": "nwb test-react --coverage",
-    "test:watch": "nwb test-react --server",
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "test:watch": "tsdx test --watch",
+    "test:coverage": "tsdx test --coverage",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
     "release": "npm run build && npm publish"
   },
-  "dependencies": {},
   "peerDependencies": {
-    "react": ">= 15"
+    "react": ">=15"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
   },
   "devDependencies": {
-    "nwb": "^0.22.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-router-dom": "^5.2.0",
-    "styled-components": "^4.2.0"
+    "@rollup/plugin-replace": "^5.0.2",
+    "@testing-library/react": "^13.4.0",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "husky": "^8.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.4"
   },
   "author": "",
   "homepage": "https://github.com/unlayer/react-email-editor#readme",

@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import styled from 'styled-components';
 
 import EmailEditor from '../../../src';
+import { EditorRef } from '../../../src/types';
 import sample from './sample.json';
 
 const Container = styled.div`
@@ -40,17 +41,17 @@ const Bar = styled.div`
 `;
 
 const Example = () => {
-  const emailEditorRef = useRef(null);
+  const emailEditorRef = useRef<EditorRef | null>(null);
 
   const saveDesign = () => {
-    emailEditorRef.current.editor.saveDesign((design) => {
+    emailEditorRef.current?.editor?.saveDesign((design) => {
       console.log('saveDesign', design);
       alert('Design JSON has been logged in your developer console.');
     });
   };
 
   const exportHtml = () => {
-    emailEditorRef.current.editor.exportHtml((data) => {
+    emailEditorRef.current?.editor?.exportHtml((data) => {
       const { design, html } = data;
       console.log('exportHtml', html);
       alert('Output HTML has been logged in your developer console.');
@@ -64,12 +65,12 @@ const Example = () => {
   const onLoad = () => {
     console.log('onLoad');
 
-    emailEditorRef.current.editor.addEventListener(
+    emailEditorRef.current?.editor?.addEventListener(
       'design:loaded',
       onDesignLoad
     );
 
-    emailEditorRef.current.editor.loadDesign(sample);
+    emailEditorRef.current?.editor?.loadDesign(sample);
   };
 
   const onReady = () => {
