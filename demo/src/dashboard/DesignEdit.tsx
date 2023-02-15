@@ -1,8 +1,8 @@
-import React, { Component, useRef } from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-import { Switch, Route, Link, useRouteMatch } from 'react-router-dom';
-
+import { EditorRef } from '../../../src/types';
 import EmailEditor from '../../../src';
 
 const Container = styled.div`
@@ -54,19 +54,19 @@ const Bar = styled.div`
   }
 `;
 
-const DesignEdit = (props) => {
-  const ref = useRef(null);
+const DesignEdit = () => {
+  const emailEditorRef = useRef<EditorRef | null>(null);
 
   const saveDesign = () => {
-    ref.current.saveDesign((design) => {
+    emailEditorRef.current?.saveDesign((design) => {
       console.log('saveDesign', design);
       alert('Design JSON has been logged in your developer console.');
     });
   };
 
   const exportHtml = () => {
-    ref.current.exportHtml((data) => {
-      const { design, html } = data;
+    emailEditorRef.current?.exportHtml((data) => {
+      const { html } = data;
       console.log('exportHtml', html);
       alert('Output HTML has been logged in your developer console.');
     });
@@ -82,7 +82,7 @@ const DesignEdit = (props) => {
         <button onClick={exportHtml}>Export HTML</button>
       </Bar>
 
-      <EmailEditor ref={ref} />
+      <EmailEditor ref={emailEditorRef} />
     </Container>
   );
 };
