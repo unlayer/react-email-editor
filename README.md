@@ -9,7 +9,7 @@ The excellent drag-n-drop email editor by [Unlayer](https://unlayer.com/embed) a
 
 ## Live Demo
 
-Check out the live demo here: http://react-email-editor-demo.netlify.com/ ([Source Code](https://github.com/unlayer/react-email-editor/blob/master/demo/src/index.js))
+Check out the live demo here: http://react-email-editor-demo.netlify.com/ ([Source Code](https://github.com/unlayer/react-email-editor/tree/master/demo/src))
 
 ## Blog Post
 
