@@ -1,8 +1,8 @@
 export type EditorOptions = {
   projectId?: number;
-  tools?: object;
   appearance?: string;
   locale?: string;
+  [name: string]: any;
 };
 
 export type Editor = {
