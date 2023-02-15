@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
 
+import packageJson from '../../../package.json';
+
 import EmailEditor from '../../../src';
 import { EditorRef } from '../../../src/types';
 import sample from './sample.json';
@@ -80,7 +82,7 @@ const Example = () => {
   return (
     <Container>
       <Bar>
-        <h1>React Email Editor (Demo)</h1>
+        <h1>React Email Editor v{packageJson.version} (Demo)</h1>
 
         <button onClick={saveDesign}>Save Design</button>
         <button onClick={exportHtml}>Export HTML</button>
