@@ -18,7 +18,8 @@
     "test:watch": "tsdx test --watch",
     "test:coverage": "tsdx test --coverage",
     "lint": "tsdx lint",
-    "prepare": "tsdx build",
+    "postinstall": "cd demo && npm install",
+    "prepare": "tsdx build && cd demo && npm run build",
     "release": "npm run build && npm publish"
   },
   "peerDependencies": {
