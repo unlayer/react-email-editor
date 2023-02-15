@@ -38,6 +38,7 @@
                                 "target": "_blank"
                             }
                         },
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_image_1",
@@ -68,6 +69,7 @@
                             "linkUnderline": true,
                             "linkHoverUnderline": true
                         },
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_heading_1",
@@ -85,6 +87,7 @@
                     "type": "heading",
                     "values": {
                         "containerPadding": "0px",
+                        "anchor": "",
                         "headingType": "h2",
                         "fontSize": "28px",
                         "color": "#ffffff",
@@ -97,6 +100,7 @@
                             "linkUnderline": true,
                             "linkHoverUnderline": true
                         },
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_heading_2",
@@ -125,6 +129,7 @@
                             "linkUnderline": true,
                             "linkHoverUnderline": true
                         },
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_text_2",
@@ -207,6 +212,7 @@
                         "padding": "10px 20px",
                         "border": {},
                         "borderRadius": "25px",
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_button_2",
@@ -251,6 +257,7 @@
                             "linkUnderline": true,
                             "linkHoverUnderline": true
                         },
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_text_3",
@@ -289,6 +296,7 @@
                 },
                 "padding": "0px",
                 "anchor": "",
+                "hideDesktop": false,
                 "_meta": {
                     "htmlID": "u_row_2",
                     "htmlClassNames": "u_row"
@@ -324,6 +332,7 @@
                                 "target": "_blank"
                             }
                         },
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_image_2",
@@ -353,6 +362,7 @@
                             "linkUnderline": true,
                             "linkHoverUnderline": true
                         },
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_text_4",
@@ -370,6 +380,7 @@
                     "type": "text",
                     "values": {
                         "containerPadding": "10px",
+                        "anchor": "",
                         "fontWeight": 700,
                         "fontSize": "21px",
                         "color": "#9d9d9d",
@@ -382,6 +393,7 @@
                             "linkUnderline": true,
                             "linkHoverUnderline": true
                         },
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_text_7",
@@ -399,6 +411,7 @@
                     "type": "text",
                     "values": {
                         "containerPadding": "10px",
+                        "anchor": "",
                         "fontWeight": 700,
                         "fontSize": "21px",
                         "color": "#9d9d9d",
@@ -411,6 +424,7 @@
                             "linkUnderline": true,
                             "linkHoverUnderline": true
                         },
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_text_6",
@@ -428,6 +442,7 @@
                     "type": "text",
                     "values": {
                         "containerPadding": "10px",
+                        "anchor": "",
                         "fontWeight": 700,
                         "fontSize": "21px",
                         "color": "#9d9d9d",
@@ -440,6 +455,7 @@
                             "linkUnderline": true,
                             "linkHoverUnderline": true
                         },
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_text_5",
@@ -478,6 +494,7 @@
                 },
                 "padding": "15px 15px 70px",
                 "anchor": "",
+                "hideDesktop": false,
                 "_meta": {
                     "htmlID": "u_row_3",
                     "htmlClassNames": "u_row"
@@ -511,6 +528,7 @@
                             "linkUnderline": true,
                             "linkHoverUnderline": true
                         },
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_heading_3",
@@ -549,6 +567,7 @@
                 },
                 "padding": "50px",
                 "anchor": "",
+                "hideDesktop": false,
                 "_meta": {
                     "htmlID": "u_row_4",
                     "htmlClassNames": "u_row"
@@ -580,6 +599,7 @@
                             "linkUnderline": true,
                             "linkHoverUnderline": true
                         },
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_text_8",
@@ -607,6 +627,7 @@
                             "linkUnderline": true,
                             "linkHoverUnderline": true
                         },
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_text_9",
@@ -624,6 +645,7 @@
                     "type": "text",
                     "values": {
                         "containerPadding": "10px",
+                        "anchor": "",
                         "fontSize": "14px",
                         "color": "#0071e3",
                         "textAlign": "center",
@@ -635,6 +657,7 @@
                             "linkUnderline": true,
                             "linkHoverUnderline": true
                         },
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_text_10",
@@ -664,7 +687,7 @@
                     "id": "Wbvl_87V-4",
                     "type": "image",
                     "values": {
-                        "containerPadding": "10px",
+                        "containerPadding": "0px",
                         "anchor": "",
                         "src": {
                             "url": "https://assets.unlayer.com/projects/139/1676496418898-credit_mac_2x.jpg",
@@ -680,6 +703,7 @@
                                 "target": "_blank"
                             }
                         },
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_image_3",
@@ -717,6 +741,7 @@
                 },
                 "padding": "5px",
                 "anchor": "",
+                "hideDesktop": false,
                 "_meta": {
                     "htmlID": "u_row_5",
                     "htmlClassNames": "u_row"
@@ -748,6 +773,7 @@
                             "linkUnderline": true,
                             "linkHoverUnderline": true
                         },
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_text_11",
@@ -765,6 +791,7 @@
                     "type": "text",
                     "values": {
                         "containerPadding": "10px",
+                        "anchor": "",
                         "textAlign": "center",
                         "lineHeight": "150%",
                         "linkStyle": {
@@ -774,6 +801,7 @@
                             "linkUnderline": true,
                             "linkHoverUnderline": true
                         },
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_text_24",
@@ -791,6 +819,7 @@
                     "type": "text",
                     "values": {
                         "containerPadding": "10px",
+                        "anchor": "",
                         "fontSize": "14px",
                         "color": "#0071e3",
                         "textAlign": "center",
@@ -802,6 +831,7 @@
                             "linkUnderline": true,
                             "linkHoverUnderline": true
                         },
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_text_13",
@@ -834,6 +864,7 @@
                                 "target": "_blank"
                             }
                         },
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_image_7",
@@ -894,6 +925,7 @@
                     "type": "text",
                     "values": {
                         "containerPadding": "10px",
+                        "anchor": "",
                         "fontSize": "24px",
                         "textAlign": "center",
                         "lineHeight": "120%",
@@ -904,6 +936,7 @@
                             "linkUnderline": true,
                             "linkHoverUnderline": true
                         },
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_text_21",
@@ -921,6 +954,7 @@
                     "type": "text",
                     "values": {
                         "containerPadding": "10px",
+                        "anchor": "",
                         "fontSize": "14px",
                         "color": "#0071e3",
                         "textAlign": "center",
@@ -932,6 +966,7 @@
                             "linkUnderline": true,
                             "linkHoverUnderline": true
                         },
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_text_23",
@@ -964,6 +999,7 @@
                                 "target": "_blank"
                             }
                         },
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_image_8",
@@ -1031,6 +1067,8 @@
                     "position": "center"
                 },
                 "padding": "5px",
+                "anchor": "",
+                "hideDesktop": false,
                 "_meta": {
                     "htmlID": "u_row_6",
                     "htmlClassNames": "u_row"
@@ -1050,7 +1088,7 @@
                     "id": "S_hqZ7HMSl",
                     "type": "image",
                     "values": {
-                        "containerPadding": "10px",
+                        "containerPadding": "0px",
                         "anchor": "",
                         "src": {
                             "url": "https://assets.unlayer.com/projects/139/1676496501021-specialist_2x.jpg",
@@ -1066,6 +1104,7 @@
                                 "target": "_blank"
                             }
                         },
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_image_6",
@@ -1106,6 +1145,7 @@
                             "linkUnderline": true,
                             "linkHoverUnderline": true
                         },
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_text_18",
@@ -1133,6 +1173,7 @@
                             "linkUnderline": true,
                             "linkHoverUnderline": true
                         },
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_text_19",
@@ -1150,6 +1191,7 @@
                     "type": "text",
                     "values": {
                         "containerPadding": "10px",
+                        "anchor": "",
                         "fontSize": "14px",
                         "color": "#0071e3",
                         "textAlign": "center",
@@ -1161,6 +1203,7 @@
                             "linkUnderline": true,
                             "linkHoverUnderline": true
                         },
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_text_20",
@@ -1198,6 +1241,8 @@
                     "position": "center"
                 },
                 "padding": "5px",
+                "anchor": "",
+                "hideDesktop": false,
                 "_meta": {
                     "htmlID": "u_row_8",
                     "htmlClassNames": "u_row"
@@ -1285,6 +1330,7 @@
                         "layout": "horizontal",
                         "separator": "|",
                         "padding": "5px 10px",
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_menu_1",
@@ -1309,6 +1355,7 @@
                         "textAlign": "center",
                         "containerPadding": "10px",
                         "anchor": "",
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_divider_1",
@@ -1331,13 +1378,14 @@
                         "textAlign": "left",
                         "lineHeight": "200%",
                         "linkStyle": {
-                            "body": false,
                             "inherit": false,
                             "linkColor": "#d2d2d7",
-                            "linkUnderline": false,
                             "linkHoverColor": "#0000ee",
-                            "linkHoverUnderline": true
+                            "linkUnderline": false,
+                            "linkHoverUnderline": true,
+                            "body": false
                         },
+                        "hideDesktop": false,
                         "displayCondition": null,
                         "_meta": {
                             "htmlID": "u_content_text_17",
@@ -1375,6 +1423,8 @@
                     "position": "center"
                 },
                 "padding": "10px 10px 50px",
+                "anchor": "",
+                "hideDesktop": false,
                 "_meta": {
                     "htmlID": "u_row_7",
                     "htmlClassNames": "u_row"
@@ -1433,11 +1483,11 @@
             "preheaderText": "",
             "linkStyle": {
                 "body": true,
-                "inherit": false,
                 "linkColor": "#0071e3",
-                "linkUnderline": true,
                 "linkHoverColor": "#0000ee",
-                "linkHoverUnderline": true
+                "linkUnderline": true,
+                "linkHoverUnderline": true,
+                "inherit": false
             },
             "_meta": {
                 "htmlID": "u_body",
