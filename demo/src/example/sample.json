@@ -1,13 +1,13 @@
 {
     "counters": {
-        "u_column": 13,
         "u_row": 8,
-        "u_content_image": 8,
-        "u_content_text": 24,
-        "u_content_heading": 3,
-        "u_content_button": 2,
+        "u_column": 13,
         "u_content_menu": 1,
-        "u_content_divider": 1
+        "u_content_text": 24,
+        "u_content_image": 8,
+        "u_content_button": 2,
+        "u_content_divider": 1,
+        "u_content_heading": 3
     },
     "body": {
         "id": "0QFAKPxyzM",
@@ -26,8 +26,8 @@
                             "url": "https://assets.unlayer.com/projects/139/1676495528722-apple_logo_circle_f5f5f7-000_2x.png",
                             "width": 116,
                             "height": 116,
-                            "autoWidth": false,
-                            "maxWidth": "15%"
+                            "maxWidth": "15%",
+                            "autoWidth": false
                         },
                         "textAlign": "center",
                         "altText": "",
@@ -48,7 +48,15 @@
                         "draggable": true,
                         "duplicatable": true,
                         "deletable": true,
-                        "hideable": true
+                        "hideable": true,
+                        "_override": {
+                            "mobile": {
+                                "src": {
+                                    "maxWidth": "20%",
+                                    "autoWidth": false
+                                }
+                            }
+                        }
                     }
                 }, {
                     "id": "wQof8hV6QL",
@@ -80,7 +88,12 @@
                         "duplicatable": true,
                         "deletable": true,
                         "hideable": true,
-                        "text": "MacBook Pro"
+                        "text": "MacBook Pro",
+                        "_override": {
+                            "mobile": {
+                                "fontSize": "45px"
+                            }
+                        }
                     }
                 }, {
                     "id": "tfkkYtjur9",
@@ -111,7 +124,12 @@
                         "duplicatable": true,
                         "deletable": true,
                         "hideable": true,
-                        "text": "Mover. Maker. Boundary breaker."
+                        "text": "Mover. Maker. Boundary breaker.",
+                        "_override": {
+                            "mobile": {
+                                "fontSize": "19px"
+                            }
+                        }
                     }
                 }, {
                     "id": "7wzu4Z8K86",
@@ -140,17 +158,22 @@
                         "duplicatable": true,
                         "deletable": true,
                         "hideable": true,
-                        "text": "<p style=\"line-height: 140%;\">From $1999 or $166.58/mo. for 12 mo.</p>"
+                        "text": "<p style=\"line-height: 140%;\">From $1999 or $166.58/mo. for 12 mo.</p>",
+                        "_override": {
+                            "mobile": {
+                                "fontSize": "14px"
+                            }
+                        }
                     }
                 }],
                 "values": {
-                    "border": {},
-                    "padding": "0px",
-                    "backgroundColor": "",
                     "_meta": {
                         "htmlID": "u_column_1",
                         "htmlClassNames": "u_column"
-                    }
+                    },
+                    "border": {},
+                    "padding": "0px",
+                    "backgroundColor": ""
                 }
             }],
             "values": {
@@ -225,18 +248,23 @@
                         "hideable": true,
                         "text": "<span style=\"line-height: 20.4px;\">Buy</span>",
                         "calculatedWidth": 69,
-                        "calculatedHeight": 40
+                        "calculatedHeight": 40,
+                        "_override": {
+                            "mobile": {
+                                "textAlign": "center"
+                            }
+                        }
                     }
                 }],
                 "values": {
-                    "backgroundColor": "",
-                    "padding": "0px",
-                    "border": {},
-                    "borderRadius": "0px",
                     "_meta": {
                         "htmlID": "u_column_2",
                         "htmlClassNames": "u_column"
-                    }
+                    },
+                    "border": {},
+                    "padding": "0px",
+                    "borderRadius": "0px",
+                    "backgroundColor": ""
                 }
             }, {
                 "id": "oHGVnfFNrL",
@@ -268,18 +296,23 @@
                         "duplicatable": true,
                         "deletable": true,
                         "hideable": true,
-                        "text": "<p style=\"line-height: 140%;\">Learn more </p>"
+                        "text": "<p style=\"line-height: 140%;\">Learn more </p>",
+                        "_override": {
+                            "mobile": {
+                                "textAlign": "center"
+                            }
+                        }
                     }
                 }],
                 "values": {
-                    "backgroundColor": "",
-                    "padding": "0px",
-                    "border": {},
-                    "borderRadius": "0px",
                     "_meta": {
                         "htmlID": "u_column_3",
                         "htmlClassNames": "u_column"
-                    }
+                    },
+                    "border": {},
+                    "padding": "0px",
+                    "borderRadius": "0px",
+                    "backgroundColor": ""
                 }
             }],
             "values": {
@@ -373,7 +406,13 @@
                         "duplicatable": true,
                         "deletable": true,
                         "hideable": true,
-                        "text": "<p style=\"line-height: 140%;\">Supercharged by M2 Pro and M2 Max.</p>"
+                        "text": "<p style=\"line-height: 140%;\">Supercharged by M2 Pro and M2 Max.</p>",
+                        "_override": {
+                            "mobile": {
+                                "lineHeight": "140%",
+                                "fontSize": "18px"
+                            }
+                        }
                     }
                 }, {
                     "id": "usZCBV0vIV",
@@ -404,7 +443,12 @@
                         "duplicatable": true,
                         "deletable": true,
                         "hideable": true,
-                        "text": "<p style=\"line-height: 140%;\">Up to 22 hours of battery life.</p>"
+                        "text": "<p style=\"line-height: 140%;\">Up to 22 hours of battery life.</p>",
+                        "_override": {
+                            "mobile": {
+                                "fontSize": "18px"
+                            }
+                        }
                     }
                 }, {
                     "id": "GvsqJNYPRO",
@@ -435,7 +479,12 @@
                         "duplicatable": true,
                         "deletable": true,
                         "hideable": true,
-                        "text": "<p style=\"line-height: 140%;\">Stunning Liquid Retina XDR display.</p>"
+                        "text": "<p style=\"line-height: 140%;\">Stunning Liquid Retina XDR display.</p>",
+                        "_override": {
+                            "mobile": {
+                                "fontSize": "18px"
+                            }
+                        }
                     }
                 }, {
                     "id": "T_w1lypU3k",
@@ -466,18 +515,23 @@
                         "duplicatable": true,
                         "deletable": true,
                         "hideable": true,
-                        "text": "<p style=\"line-height: 140%;\">All the ports you need and faster Wi-Fi 6E.3</p>"
+                        "text": "<p style=\"line-height: 140%;\">All the ports you need and faster Wi-Fi 6E.3</p>",
+                        "_override": {
+                            "mobile": {
+                                "fontSize": "18px"
+                            }
+                        }
                     }
                 }],
                 "values": {
-                    "backgroundColor": "",
-                    "padding": "0px",
-                    "border": {},
-                    "borderRadius": "0px",
                     "_meta": {
                         "htmlID": "u_column_4",
                         "htmlClassNames": "u_column"
-                    }
+                    },
+                    "border": {},
+                    "padding": "0px",
+                    "borderRadius": "0px",
+                    "backgroundColor": ""
                 }
             }],
             "values": {
@@ -539,18 +593,23 @@
                         "duplicatable": true,
                         "deletable": true,
                         "hideable": true,
-                        "text": "Why Apple is the best place<br />to buy your new Mac."
+                        "text": "Why Apple is the best place<br />to buy your new Mac.",
+                        "_override": {
+                            "mobile": {
+                                "fontSize": "28px"
+                            }
+                        }
                     }
                 }],
                 "values": {
-                    "backgroundColor": "",
-                    "padding": "0px",
-                    "border": {},
-                    "borderRadius": "0px",
                     "_meta": {
                         "htmlID": "u_column_5",
                         "htmlClassNames": "u_column"
-                    }
+                    },
+                    "border": {},
+                    "padding": "0px",
+                    "borderRadius": "0px",
+                    "backgroundColor": ""
                 }
             }],
             "values": {
@@ -672,14 +731,14 @@
                     }
                 }],
                 "values": {
-                    "backgroundColor": "",
-                    "padding": "33px",
-                    "border": {},
-                    "borderRadius": "0px",
                     "_meta": {
                         "htmlID": "u_column_6",
                         "htmlClassNames": "u_column"
-                    }
+                    },
+                    "border": {},
+                    "padding": "33px",
+                    "borderRadius": "0px",
+                    "backgroundColor": ""
                 }
             }, {
                 "id": "jGDnuQs-ho",
@@ -717,14 +776,14 @@
                     }
                 }],
                 "values": {
-                    "backgroundColor": "",
-                    "padding": "0px",
-                    "border": {},
-                    "borderRadius": "0px",
                     "_meta": {
                         "htmlID": "u_column_7",
                         "htmlClassNames": "u_column"
-                    }
+                    },
+                    "border": {},
+                    "padding": "0px",
+                    "borderRadius": "0px",
+                    "backgroundColor": ""
                 }
             }],
             "values": {
@@ -878,45 +937,45 @@
                     }
                 }],
                 "values": {
-                    "backgroundColor": "",
-                    "padding": "33px 0px 0px",
-                    "border": {
-                        "borderTopWidth": "0px",
-                        "borderTopStyle": "solid",
-                        "borderTopColor": "#CCC",
-                        "borderLeftWidth": "0px",
-                        "borderLeftStyle": "solid",
-                        "borderLeftColor": "#CCC",
-                        "borderRightWidth": "5px",
-                        "borderRightStyle": "solid",
-                        "borderRightColor": "#1d1d1f",
-                        "borderBottomWidth": "0px",
-                        "borderBottomStyle": "solid",
-                        "borderBottomColor": "#CCC"
-                    },
-                    "borderRadius": "0px",
                     "_meta": {
                         "htmlID": "u_column_8",
                         "htmlClassNames": "u_column"
                     },
+                    "border": {
+                        "borderTopColor": "#CCC",
+                        "borderTopStyle": "solid",
+                        "borderTopWidth": "0px",
+                        "borderLeftColor": "#CCC",
+                        "borderLeftStyle": "solid",
+                        "borderLeftWidth": "0px",
+                        "borderRightColor": "#1d1d1f",
+                        "borderRightStyle": "solid",
+                        "borderRightWidth": "5px",
+                        "borderBottomColor": "#CCC",
+                        "borderBottomStyle": "solid",
+                        "borderBottomWidth": "0px"
+                    },
+                    "padding": "33px 0px 0px",
                     "_override": {
                         "mobile": {
                             "border": {
-                                "borderTopWidth": "0px",
-                                "borderTopStyle": "solid",
                                 "borderTopColor": "#CCC",
-                                "borderLeftWidth": "0px",
-                                "borderLeftStyle": "solid",
+                                "borderTopStyle": "solid",
+                                "borderTopWidth": "0px",
                                 "borderLeftColor": "#CCC",
-                                "borderRightWidth": "0px",
-                                "borderRightStyle": "solid",
+                                "borderLeftStyle": "solid",
+                                "borderLeftWidth": "0px",
                                 "borderRightColor": "#CCC",
-                                "borderBottomWidth": "0px",
+                                "borderRightStyle": "solid",
+                                "borderRightWidth": "0px",
+                                "borderBottomColor": "#CCC",
                                 "borderBottomStyle": "solid",
-                                "borderBottomColor": "#CCC"
+                                "borderBottomWidth": "0px"
                             }
                         }
-                    }
+                    },
+                    "borderRadius": "0px",
+                    "backgroundColor": ""
                 }
             }, {
                 "id": "jAFMuhCh-p",
@@ -1013,45 +1072,45 @@
                     }
                 }],
                 "values": {
-                    "backgroundColor": "",
-                    "padding": "33px 0px 0px",
-                    "border": {
-                        "borderTopWidth": "0px",
-                        "borderTopStyle": "solid",
-                        "borderTopColor": "#CCC",
-                        "borderLeftWidth": "5px",
-                        "borderLeftStyle": "solid",
-                        "borderLeftColor": "#1d1d1f",
-                        "borderRightWidth": "0px",
-                        "borderRightStyle": "solid",
-                        "borderRightColor": "#CCC",
-                        "borderBottomWidth": "0px",
-                        "borderBottomStyle": "solid",
-                        "borderBottomColor": "#CCC"
-                    },
-                    "borderRadius": "0px",
                     "_meta": {
                         "htmlID": "u_column_9",
                         "htmlClassNames": "u_column"
                     },
+                    "border": {
+                        "borderTopColor": "#CCC",
+                        "borderTopStyle": "solid",
+                        "borderTopWidth": "0px",
+                        "borderLeftColor": "#1d1d1f",
+                        "borderLeftStyle": "solid",
+                        "borderLeftWidth": "5px",
+                        "borderRightColor": "#CCC",
+                        "borderRightStyle": "solid",
+                        "borderRightWidth": "0px",
+                        "borderBottomColor": "#CCC",
+                        "borderBottomStyle": "solid",
+                        "borderBottomWidth": "0px"
+                    },
+                    "padding": "33px 0px 0px",
                     "_override": {
                         "mobile": {
                             "border": {
-                                "borderTopWidth": "0px",
-                                "borderTopStyle": "solid",
                                 "borderTopColor": "#CCC",
-                                "borderLeftWidth": "0px",
-                                "borderLeftStyle": "solid",
+                                "borderTopStyle": "solid",
+                                "borderTopWidth": "0px",
                                 "borderLeftColor": "#CCC",
-                                "borderRightWidth": "0px",
-                                "borderRightStyle": "solid",
+                                "borderLeftStyle": "solid",
+                                "borderLeftWidth": "0px",
                                 "borderRightColor": "#CCC",
-                                "borderBottomWidth": "0px",
+                                "borderRightStyle": "solid",
+                                "borderRightWidth": "0px",
+                                "borderBottomColor": "#CCC",
                                 "borderBottomStyle": "solid",
-                                "borderBottomColor": "#CCC"
+                                "borderBottomWidth": "0px"
                             }
                         }
-                    }
+                    },
+                    "borderRadius": "0px",
+                    "backgroundColor": ""
                 }
             }],
             "values": {
@@ -1118,14 +1177,14 @@
                     }
                 }],
                 "values": {
-                    "backgroundColor": "",
-                    "padding": "0px",
-                    "border": {},
-                    "borderRadius": "0px",
                     "_meta": {
                         "htmlID": "u_column_12",
                         "htmlClassNames": "u_column"
-                    }
+                    },
+                    "border": {},
+                    "padding": "0px",
+                    "borderRadius": "0px",
+                    "backgroundColor": ""
                 }
             }, {
                 "id": "tBvHHdYsbP",
@@ -1218,14 +1277,14 @@
                     }
                 }],
                 "values": {
-                    "backgroundColor": "",
-                    "padding": "33px",
-                    "border": {},
-                    "borderRadius": "0px",
                     "_meta": {
                         "htmlID": "u_column_13",
                         "htmlClassNames": "u_column"
-                    }
+                    },
+                    "border": {},
+                    "padding": "33px",
+                    "borderRadius": "0px",
+                    "backgroundColor": ""
                 }
             }],
             "values": {
@@ -1267,7 +1326,6 @@
                         "menu": {
                             "items": [{
                                 "key": "1676496571373",
-                                "text": "Shop Online",
                                 "link": {
                                     "name": "web",
                                     "attrs": {
@@ -1278,10 +1336,10 @@
                                         "href": "https://www.apple.com/",
                                         "target": "_self"
                                     }
-                                }
+                                },
+                                "text": "Shop Online"
                             }, {
                                 "key": "1676496577930",
-                                "text": "Find a Store",
                                 "link": {
                                     "name": "web",
                                     "attrs": {
@@ -1292,10 +1350,10 @@
                                         "href": "https://www.apple.com/",
                                         "target": "_self"
                                     }
-                                }
+                                },
+                                "text": "Find a Store"
                             }, {
                                 "key": "1676496581406",
-                                "text": "1-800-MY-APPLE",
                                 "link": {
                                     "name": "web",
                                     "attrs": {
@@ -1306,10 +1364,10 @@
                                         "href": "https://www.apple.com/",
                                         "target": "_self"
                                     }
-                                }
+                                },
+                                "text": "1-800-MY-APPLE"
                             }, {
                                 "key": "1676496588057",
-                                "text": "Get the Apple Store App",
                                 "link": {
                                     "name": "web",
                                     "attrs": {
@@ -1320,7 +1378,8 @@
                                         "href": "https://www.apple.com/",
                                         "target": "_self"
                                     }
-                                }
+                                },
+                                "text": "Get the Apple Store App"
                             }]
                         },
                         "fontSize": "14px",
@@ -1340,7 +1399,12 @@
                         "draggable": true,
                         "duplicatable": true,
                         "deletable": true,
-                        "hideable": true
+                        "hideable": true,
+                        "_override": {
+                            "mobile": {
+                                "layout": "vertical"
+                            }
+                        }
                     }
                 }, {
                     "id": "mNBB5zCn71",
@@ -1400,14 +1464,14 @@
                     }
                 }],
                 "values": {
-                    "backgroundColor": "",
-                    "padding": "0px 30px",
-                    "border": {},
-                    "borderRadius": "0px",
                     "_meta": {
                         "htmlID": "u_column_10",
                         "htmlClassNames": "u_column"
-                    }
+                    },
+                    "border": {},
+                    "padding": "0px 30px",
+                    "borderRadius": "0px",
+                    "backgroundColor": ""
                 }
             }],
             "values": {
@@ -1448,8 +1512,8 @@
                 "label": "Helvetica",
                 "value": "helvetica,sans-serif",
                 "url": "",
-                "defaultFont": true,
-                "weights": null
+                "weights": null,
+                "defaultFont": true
             },
             "textColor": "#ffffff",
             "popupBackgroundColor": "#FFFFFF",
