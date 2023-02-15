@@ -1,6 +1,6 @@
 {
   "name": "react-email-editor",
-  "version": "1.7.0-beta.0",
+  "version": "1.7.0",
   "description": "Unlayer's Email Editor Component for React.js",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
