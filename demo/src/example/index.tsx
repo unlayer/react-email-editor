@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 
 import packageJson from '../../../package.json';
@@ -44,6 +44,7 @@ const Bar = styled.div`
 
 const Example = () => {
   const emailEditorRef = useRef<EditorRef | null>(null);
+  const [preview, setPreview] = useState(false);
 
   const saveDesign = () => {
     emailEditorRef.current?.editor?.saveDesign((design) => {
@@ -59,6 +60,16 @@ const Example = () => {
       alert('Output HTML has been logged in your developer console.');
     });
   };
+
+  const togglePreview = () => {
+    if (preview) {
+      emailEditorRef.current?.editor?.hidePreview();
+      setPreview(false);
+    } else {
+      emailEditorRef.current?.editor?.showPreview("desktop");
+      setPreview(true);
+    }
+  }
 
   const onDesignLoad = (data) => {
     console.log('onDesignLoad', data);
@@ -84,6 +95,7 @@ const Example = () => {
       <Bar>
         <h1>React Email Editor v{packageJson.version} (Demo)</h1>
 
+        <button onClick={togglePreview}>{preview ? "Hide" : "Show"} Preview</button>
         <button onClick={saveDesign}>Save Design</button>
         <button onClick={exportHtml}>Export HTML</button>
       </Bar>

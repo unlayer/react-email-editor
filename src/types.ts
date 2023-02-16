@@ -15,6 +15,8 @@ export type Editor = {
   loadDesign: (design: object) => void;
   saveDesign: (callback: Function) => void;
   exportHtml: (callback: Function) => void;
+  showPreview: (device: string) => void;
+  hidePreview: () => void;
   setMergeTags: (mergeTags: object) => void;
 };
 
