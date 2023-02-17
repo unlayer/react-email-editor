@@ -136,8 +136,17 @@ const EmailEditor = (props: Props, ref: React.ForwardedRef<EditorRef>) => {
       editor,
       loadDesign,
       registerCallback,
+      addEventListener,
     }),
-    [saveDesign, exportHtml, setMergeTags, editor, loadDesign, registerCallback]
+    [
+      saveDesign,
+      exportHtml,
+      setMergeTags,
+      editor,
+      loadDesign,
+      registerCallback,
+      addEventListener,
+    ]
   );
 
   return (
