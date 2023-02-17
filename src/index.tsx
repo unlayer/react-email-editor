@@ -15,6 +15,9 @@ type Props = {
   scriptUrl?: string;
   onReady?: Function;
   onLoad?: Function;
+  onDesignLoaded?: Function;
+  onDesignUpdated?: Function;
+  onImageUploaded?: Function;
   editorId?: string;
   projectId?: number;
   options?: EditorOptions;
@@ -27,7 +30,16 @@ type Props = {
 let lastEditorId = 0;
 
 const EmailEditor = (props: Props, ref: React.ForwardedRef<EditorRef>) => {
-  const { onLoad, onReady, scriptUrl, minHeight = 500, style = {} } = props;
+  const {
+    onLoad,
+    onReady,
+    onDesignLoaded,
+    onDesignUpdated,
+    onImageUploaded,
+    scriptUrl,
+    minHeight = 500,
+    style = {},
+  } = props;
 
   const editorId = useRef(props.editorId || `editor-${++lastEditorId}`);
   const isLoadedRef = useRef(false);
@@ -114,18 +126,32 @@ const EmailEditor = (props: Props, ref: React.ForwardedRef<EditorRef>) => {
   useEffect(() => {
     if (!editor) return;
 
-    // All properties starting with on[Name] are registered as event listeners.
-    for (const [key, value] of Object.entries(props)) {
-      if (/^on/.test(key) && key !== 'onLoad' && key !== 'onReady') {
-        addEventListener(key, value as Function);
-      }
-    }
-
     // @deprecated
     onLoad && onLoad();
 
     if (onReady) editor.addEventListener('editor:ready', onReady);
-  }, [editor, addEventListener, onLoad, onReady, props]);
+  }, [editor, addEventListener, onLoad, onReady]);
+
+  useEffect(() => {
+    if (!editor) return;
+
+    if (onDesignLoaded)
+      editor.addEventListener('design:loaded', onDesignLoaded);
+  }, [editor, addEventListener, onDesignLoaded]);
+
+  useEffect(() => {
+    if (!editor) return;
+
+    if (onDesignUpdated)
+      editor.addEventListener('design:updated', onDesignUpdated);
+  }, [editor, addEventListener, onDesignUpdated]);
+
+  useEffect(() => {
+    if (!editor) return;
+
+    if (onImageUploaded)
+      editor.addEventListener('image:uploaded', onImageUploaded);
+  }, [editor, addEventListener, onImageUploaded]);
 
   useImperativeHandle(
     ref,
