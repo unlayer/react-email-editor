@@ -48,7 +48,7 @@ const App = (props) => {
     // you can load your template here;
     // const templateJson = {};
     // emailEditorRef.current.editor.loadDesign(templateJson);
-  }
+  };
 
   const onReady = () => {
     // editor is ready
@@ -77,7 +77,7 @@ render(<App />, document.getElementById('app'));
 | **saveDesign** | `Function callback` | Returns the design JSON in a callback function          |
 | **exportHtml** | `Function callback` | Returns the design HTML and JSON in a callback function |
 
-See the [example source](https://github.com/unlayer/react-email-editor/blob/master/demo/src/index.js) for a reference implementation.
+See the [example source](https://github.com/unlayer/react-email-editor/blob/master/demo/index.tsx) for a reference implementation.
 
 ### Properties
 
