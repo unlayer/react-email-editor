@@ -5,7 +5,7 @@ import React, {
   useImperativeHandle,
   useCallback,
 } from 'react';
-import { Editor, EditorOptions, EditorRef } from 'types';
+import { Editor, EditorOptions, EditorRef, MergeTag } from 'types';
 
 import pkg from '../package.json';
 import { loadScript } from './loadScript';
@@ -101,7 +101,7 @@ const EmailEditor = (props: Props, ref: React.ForwardedRef<EditorRef>) => {
   );
 
   const setMergeTags = useCallback(
-    (mergeTags: object) => {
+    (mergeTags: MergeTag[]) => {
       editor?.setMergeTags(mergeTags);
     },
     [editor]
