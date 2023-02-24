@@ -24,7 +24,7 @@ import { loadScript } from './loadScript';
 
 let lastEditorId = 0;
 
-const EmailEditor = React.forwardRef<EditorRef, EmailEditorProps>(
+export const EmailEditor = React.forwardRef<EditorRef, EmailEditorProps>(
   (props, ref) => {
     const { onLoad, onReady, scriptUrl, minHeight = 500, style = {} } = props;
 
@@ -170,7 +170,3 @@ const EmailEditor = React.forwardRef<EditorRef, EmailEditorProps>(
     );
   }
 );
-
-export default EmailEditor;
-
-export * from './types';
