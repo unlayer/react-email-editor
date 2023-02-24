@@ -66,10 +66,10 @@ const Example = () => {
       emailEditorRef.current?.editor?.hidePreview();
       setPreview(false);
     } else {
-      emailEditorRef.current?.editor?.showPreview("desktop");
+      emailEditorRef.current?.editor?.showPreview('desktop');
       setPreview(true);
     }
-  }
+  };
 
   const onDesignLoad = (data) => {
     console.log('onDesignLoad', data);
@@ -95,7 +95,9 @@ const Example = () => {
       <Bar>
         <h1>React Email Editor v{packageJson.version} (Demo)</h1>
 
-        <button onClick={togglePreview}>{preview ? "Hide" : "Show"} Preview</button>
+        <button onClick={togglePreview}>
+          {preview ? 'Hide' : 'Show'} Preview
+        </button>
         <button onClick={saveDesign}>Save Design</button>
         <button onClick={exportHtml}>Export HTML</button>
       </Bar>
