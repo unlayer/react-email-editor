@@ -154,6 +154,12 @@ export interface HtmlExport {
   html: string;
 }
 
+
+export interface ImageExport {
+  design: Design;
+  url: string;
+}
+
 export interface HtmlOptions {
   cleanup: boolean;
   minify: boolean;
@@ -179,6 +185,7 @@ export interface Design {
 
 export type SaveDesignCallback = (data: Design) => void;
 export type ExportHtmlCallback = (data: HtmlExport) => void;
+export type ExportImageCallback = (data: ImageExport) => void;
 export type EventCallback = (data: object) => void;
 export type FileUploadCallback = (
   file: FileInfo,
@@ -199,6 +206,7 @@ export type RegisterCallback = {
   (type: 'displayCondition', callback: DisplayConditionCallback): void;
 };
 export type AddEventListener = (type: string, callback: EventCallback) => void;
+export type RemoveEventListener = (type: string, callback: EventCallback) => void;
 export type LoadBlank = (options: object) => void;
 export type LoadDesign = (design: Design) => void;
 export type SaveDesign = (callback: SaveDesignCallback) => void;
@@ -206,6 +214,7 @@ export type ExportHtml = (
   callback: ExportHtmlCallback,
   options?: HtmlOptions
 ) => void;
+export type ExportImage = (callback: ExportImageCallback) => void;
 export type SetMergeTags = (mergeTags: Array<MergeTag>) => void;
 
 export interface EditorMethods {
@@ -216,6 +225,8 @@ export interface EditorMethods {
   registerCallback: RegisterCallback;
   addEventListener: AddEventListener;
   loadBlank: LoadBlank;
+  removeEventListener: RemoveEventListener;
+  exportImage: ExportImage;
 }
 
 export interface Editor extends EditorMethods {
