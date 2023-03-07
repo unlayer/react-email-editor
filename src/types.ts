@@ -93,6 +93,13 @@ export interface EditorConfig {
   maxRows?: number | undefined;
 }
 
+type AiFeatures = {
+  smartButtons?: boolean;
+  smartHeadings?: boolean;
+  magicImage?: boolean;
+  smartText?: boolean;
+};
+
 export interface Features {
   audit?: boolean | undefined;
   preview?: boolean | undefined;
@@ -100,6 +107,7 @@ export interface Features {
   undoRedo?: boolean | undefined;
   stockImages?: boolean | undefined;
   textEditor?: TextEditor | undefined;
+  ai?: boolean | AiFeatures;
 }
 
 export interface TextEditor {
