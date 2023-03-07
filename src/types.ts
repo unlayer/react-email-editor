@@ -97,6 +97,7 @@ type AiFeatures = {
   smartButtons?: boolean;
   smartHeadings?: boolean;
   magicImage?: boolean;
+  smartText?: boolean;
 };
 
 export interface Features {
