@@ -1,4 +1,4 @@
 import { EmailEditor } from './EmailEditor';
 
 export * from './types';
-export default EmailEditor;
+export { EmailEditor as default };
