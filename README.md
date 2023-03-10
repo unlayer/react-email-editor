@@ -43,16 +43,11 @@ const App = (props) => {
     });
   };
 
-  const onLoad = () => {
-    // editor instance is created
+  const onReady = () => {
+    // editor is ready
     // you can load your template here;
     // const templateJson = {};
     // emailEditorRef.current.editor.loadDesign(templateJson);
-  };
-
-  const onReady = () => {
-    // editor is ready
-    console.log('onReady');
   };
 
   return (
@@ -61,7 +56,7 @@ const App = (props) => {
         <button onClick={exportHtml}>Export HTML</button>
       </div>
 
-      <EmailEditor ref={emailEditorRef} onLoad={onLoad} onReady={onReady} />
+      <EmailEditor ref={emailEditorRef} onReady={onReady} />
     </div>
   );
 };
