@@ -108,6 +108,7 @@ export interface Features {
   stockImages?: boolean | undefined;
   textEditor?: TextEditor | undefined;
   ai?: boolean | AiFeatures;
+  smartMergeTags?: boolean | undefined;
 }
 
 export interface TextEditor {
