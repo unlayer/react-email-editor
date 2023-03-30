@@ -20,6 +20,7 @@ export interface User {
   id?: number | undefined;
   name?: string | undefined;
   email?: string | undefined;
+  signature?: string | undefined;
 }
 
 export interface GroupedSpecialLink {
