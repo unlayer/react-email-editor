@@ -17,6 +17,8 @@ import {
   RegisterCallback,
   SaveDesign,
   SetMergeTags,
+  ExportImage,
+  RemoveEventListener,
 } from './types';
 
 import pkg from '../package.json';
@@ -71,6 +73,13 @@ export const EmailEditor = React.forwardRef<EditorRef, EmailEditorProps>(
       [editor]
     );
 
+    const removeEventListener = useCallback<RemoveEventListener>(
+      (type, callback) => {
+        editor?.removeEventListener(type, callback);
+      },
+      [editor]
+    );
+
     const registerCallback = useCallback<RegisterCallback>(
       (type, callback) => {
         editor?.registerCallback(type as any, callback as any);
@@ -95,6 +104,13 @@ export const EmailEditor = React.forwardRef<EditorRef, EmailEditorProps>(
     const exportHtml = useCallback<ExportHtml>(
       (callback, options) => {
         editor?.exportHtml(callback, options);
+      },
+      [editor]
+    );
+
+    const exportImage = useCallback<ExportImage>(
+      (callback) => {
+        editor?.exportImage(callback);
       },
       [editor]
     );
@@ -144,6 +160,8 @@ export const EmailEditor = React.forwardRef<EditorRef, EmailEditorProps>(
         registerCallback,
         addEventListener,
         loadBlank,
+        exportImage,
+        removeEventListener,
       }),
       [
         saveDesign,
@@ -154,6 +172,8 @@ export const EmailEditor = React.forwardRef<EditorRef, EmailEditorProps>(
         registerCallback,
         addEventListener,
         loadBlank,
+        exportImage,
+        removeEventListener,
       ]
     );
 
