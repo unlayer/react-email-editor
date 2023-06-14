@@ -1,181 +1,91 @@
 import React, {
   useEffect,
-  useRef,
   useState,
   useImperativeHandle,
-  useCallback,
+  useMemo,
 } from 'react';
 
-import {
-  AddEventListener,
-  Editor,
-  EmailEditorProps,
-  EditorRef,
-  ExportHtml,
-  LoadBlank,
-  LoadDesign,
-  RegisterCallback,
-  SaveDesign,
-  SetMergeTags,
-  ExportImage,
-  RemoveEventListener,
-} from './types';
-
 import pkg from '../package.json';
+import { Editor, EditorRef, EmailEditorProps } from './types';
 import { loadScript } from './loadScript';
 
-let lastEditorId = 0;
+window.__unlayer_lastEditorId = window.__unlayer_lastEditorId || 0;
 
 export const EmailEditor = React.forwardRef<EditorRef, EmailEditorProps>(
   (props, ref) => {
     const { onLoad, onReady, scriptUrl, minHeight = 500, style = {} } = props;
 
-    const editorId = useRef(props.editorId || `editor-${++lastEditorId}`);
-    const isLoadedRef = useRef(false);
-
     const [editor, setEditor] = useState<Editor | null>(null);
 
-    const loadEditor = useCallback(() => {
-      if (isLoadedRef.current) return;
-      isLoadedRef.current = true;
+    const [hasLoadedEmbedScript, setHasLoadedEmbedScript] = useState(false);
 
-      const options = props.options || {};
-
-      if (props.projectId) options.projectId = props.projectId;
-      if (props.tools) options.tools = props.tools;
-      if (props.appearance) options.appearance = props.appearance;
-      if (props.locale) options.locale = props.locale;
-
-      setEditor(
-        unlayer.createEditor({
-          ...options,
-          id: editorId.current,
-          displayMode: 'email',
-          source: {
-            name: pkg.name,
-            version: pkg.version,
-          },
-        })
-      );
-    }, [
-      editorId.current,
-      props.appearance,
-      props.locale,
-      props.options,
-      props.projectId,
-      props.tools,
-    ]);
-
-    const addEventListener = useCallback<AddEventListener>(
-      (type, callback) => {
-        editor?.addEventListener(type, callback);
-      },
-      [editor]
+    const editorId = useMemo(
+      () => props.editorId || `editor-${++window.__unlayer_lastEditorId}`,
+      [props.editorId]
     );
 
-    const removeEventListener = useCallback<RemoveEventListener>(
-      (type, callback) => {
-        editor?.removeEventListener(type, callback);
+    const options: EmailEditorProps['options'] = {
+      ...(props.options || {}),
+      appearance: props.appearance ?? props.options?.appearance,
+      displayMode: props?.displayMode || props.options?.displayMode || 'email',
+      locale: props.locale ?? props.options?.locale,
+      projectId: props.projectId ?? props.options?.projectId,
+      tools: props.tools ?? props.options?.tools,
+
+      id: editorId,
+      source: {
+        name: pkg.name,
+        version: pkg.version,
       },
-      [editor]
-    );
-
-    const registerCallback = useCallback<RegisterCallback>(
-      (type, callback) => {
-        editor?.registerCallback(type as any, callback as any);
-      },
-      [editor]
-    );
-
-    const loadDesign = useCallback<LoadDesign>(
-      (design) => {
-        editor?.loadDesign(design);
-      },
-      [editor]
-    );
-
-    const saveDesign = useCallback<SaveDesign>(
-      (callback) => {
-        editor?.saveDesign(callback);
-      },
-      [editor]
-    );
-
-    const exportHtml = useCallback<ExportHtml>(
-      (callback, options) => {
-        editor?.exportHtml(callback, options);
-      },
-      [editor]
-    );
-
-    const exportImage = useCallback<ExportImage>(
-      (callback) => {
-        editor?.exportImage(callback);
-      },
-      [editor]
-    );
-
-    const setMergeTags = useCallback<SetMergeTags>(
-      (mergeTags) => {
-        editor?.setMergeTags(mergeTags);
-      },
-      [editor]
-    );
-
-    const loadBlank = useCallback<LoadBlank>(
-      (options) => {
-        editor?.loadBlank(options);
-      },
-      [editor]
-    );
-
-    useEffect(() => {
-      loadScript(loadEditor, scriptUrl);
-    }, [loadEditor, scriptUrl]);
-
-    useEffect(() => {
-      if (!editor) return;
-
-      // All properties starting with on[Name] are registered as event listeners.
-      for (const [key, value] of Object.entries(props)) {
-        if (/^on/.test(key) && key !== 'onLoad' && key !== 'onReady') {
-          addEventListener(key, value);
-        }
-      }
-
-      // @deprecated
-      onLoad && onLoad();
-
-      if (onReady) editor.addEventListener('editor:ready', onReady);
-    }, [editor, addEventListener, onLoad, onReady, props]);
+    };
 
     useImperativeHandle(
       ref,
       () => ({
-        saveDesign,
-        exportHtml,
-        setMergeTags,
         editor,
-        loadDesign,
-        registerCallback,
-        addEventListener,
-        loadBlank,
-        exportImage,
-        removeEventListener,
       }),
-      [
-        saveDesign,
-        exportHtml,
-        setMergeTags,
-        editor,
-        loadDesign,
-        registerCallback,
-        addEventListener,
-        loadBlank,
-        exportImage,
-        removeEventListener,
-      ]
+      [editor]
     );
+
+    useEffect(() => {
+      return () => {
+        editor?.destroy();
+      };
+    }, []);
+
+    useEffect(() => {
+      setHasLoadedEmbedScript(false);
+      loadScript(() => setHasLoadedEmbedScript(true), scriptUrl);
+    }, [scriptUrl]);
+
+    useEffect(() => {
+      if (!hasLoadedEmbedScript) return;
+      editor?.destroy();
+      setEditor(unlayer.createEditor(options));
+    }, [JSON.stringify(options), hasLoadedEmbedScript]);
+
+    const methodProps = Object.keys(props).filter((propName) =>
+      /^on/.test(propName)
+    );
+    useEffect(() => {
+      if (!editor) return;
+
+      onLoad?.();
+
+      // All properties starting with on[Name] are registered as event listeners.
+      methodProps.forEach((methodProp) => {
+        if (
+          /^on/.test(methodProp) &&
+          methodProp !== 'onLoad' &&
+          methodProp !== 'onReady' &&
+          typeof props[methodProp] === 'function'
+        ) {
+          editor.addEventListener(methodProp, props[methodProp]);
+        }
+      });
+
+      if (onReady) editor.addEventListener('editor:ready', onReady);
+    }, [editor, Object.keys(methodProps).join(',')]);
 
     return (
       <div
@@ -185,7 +95,7 @@ export const EmailEditor = React.forwardRef<EditorRef, EmailEditorProps>(
           minHeight: minHeight,
         }}
       >
-        <div id={editorId.current} style={{ ...style, flex: 1 }} />
+        <div id={editorId} style={{ ...style, flex: 1 }} />
       </div>
     );
   }
