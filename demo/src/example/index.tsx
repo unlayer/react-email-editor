@@ -2,9 +2,7 @@ import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 
 import packageJson from '../../../package.json';
-
-import EmailEditor from '../../../src';
-import { EditorRef } from '../../../src/types';
+import EmailEditor, { EditorRef, EmailEditorProps } from '../../../src'; // use react-email-editor instead
 import sample from './sample.json';
 
 const Container = styled.div`
@@ -75,19 +73,14 @@ const Example = () => {
     console.log('onDesignLoad', data);
   };
 
-  const onLoad = () => {
-    console.log('onLoad');
-
-    emailEditorRef.current?.editor?.addEventListener(
-      'design:loaded',
-      onDesignLoad
-    );
-
-    emailEditorRef.current?.editor?.loadDesign(sample);
+  const onLoad: EmailEditorProps['onLoad'] = (unlayer) => {
+    console.log('onLoad', unlayer);
+    unlayer.addEventListener('design:loaded', onDesignLoad);
+    unlayer.loadDesign(sample);
   };
 
-  const onReady = () => {
-    console.log('onReady');
+  const onReady: EmailEditorProps['onReady'] = (unlayer) => {
+    console.log('onReady', unlayer);
   };
 
   return (

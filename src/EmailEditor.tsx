@@ -70,7 +70,7 @@ export const EmailEditor = React.forwardRef<EditorRef, EmailEditorProps>(
     useEffect(() => {
       if (!editor) return;
 
-      onLoad?.();
+      onLoad?.(editor);
 
       // All properties starting with on[Name] are registered as event listeners.
       methodProps.forEach((methodProp) => {
@@ -84,7 +84,11 @@ export const EmailEditor = React.forwardRef<EditorRef, EmailEditorProps>(
         }
       });
 
-      if (onReady) editor.addEventListener('editor:ready', onReady);
+      if (onReady) {
+        editor.addEventListener('editor:ready', () => {
+          onReady(editor);
+        });
+      }
     }, [editor, Object.keys(methodProps).join(',')]);
 
     return (

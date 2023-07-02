@@ -17,8 +17,8 @@ export interface EditorRef {
 export interface EmailEditorProps {
   editorId?: string | undefined;
   minHeight?: number | string | undefined;
-  onLoad?(): void;
-  onReady?(): void;
+  onLoad?(unlayer: Editor): void;
+  onReady?(unlayer: Editor): void;
   options?: UnlayerOptions | undefined;
   scriptUrl?: string | undefined;
   style?: CSSProperties | undefined;
