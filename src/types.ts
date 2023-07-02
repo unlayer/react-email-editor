@@ -24,10 +24,15 @@ export interface EmailEditorProps {
   style?: CSSProperties | undefined;
 
   // redundant props -- already available in options
+  /** @deprecated */
   appearance?: AppearanceConfig | undefined;
+  /** @deprecated */
   displayMode?: DisplayMode;
+  /** @deprecated */
   locale?: string | undefined;
+  /** @deprecated */
   projectId?: number | undefined;
+  /** @deprecated */
   tools?: ToolsConfig | undefined;
 }
 
