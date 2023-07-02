@@ -31,23 +31,23 @@ Require the EmailEditor component and render it with JSX:
 import React, { useRef } from 'react';
 import { render } from 'react-dom';
 
-import EmailEditor from 'react-email-editor';
+import EmailEditor, { EditorRef, EmailEditorProps } from 'react-email-editor';
 
 const App = (props) => {
-  const emailEditorRef = useRef(null);
+  const emailEditorRef = useRef<EditorRef>(null);
 
   const exportHtml = () => {
-    emailEditorRef.current.editor.exportHtml((data) => {
+    emailEditorRef.current?.editor?.exportHtml((data) => {
       const { design, html } = data;
       console.log('exportHtml', html);
     });
   };
 
-  const onReady = () => {
+  const onReady: EmailEditorProps['onReady'] = (unlayer) => {
     // editor is ready
     // you can load your template here;
     // const templateJson = {};
-    // emailEditorRef.current.editor.loadDesign(templateJson);
+    // unlayer.loadDesign(templateJson);
   };
 
   return (
@@ -64,7 +64,11 @@ const App = (props) => {
 render(<App />, document.getElementById('app'));
 ```
 
+See the [example source](https://github.com/unlayer/react-email-editor/blob/master/demo/src/example/index.tsx) for a reference implementation.
+
 ### Methods
+
+All unlayer methods are available in the editor instance (`emailEditorRef.current.editor`). See the [Unlayer Docs](https://docs.unlayer.com/) for more information, or log the object in the console to explore it. Here are the most used ones:
 
 | method         | params              | description                                             |
 | -------------- | ------------------- | ------------------------------------------------------- |
@@ -72,21 +76,15 @@ render(<App />, document.getElementById('app'));
 | **saveDesign** | `Function callback` | Returns the design JSON in a callback function          |
 | **exportHtml** | `Function callback` | Returns the design HTML and JSON in a callback function |
 
-See the [example source](https://github.com/unlayer/react-email-editor/blob/master/demo/index.tsx) for a reference implementation.
-
 ### Properties
 
-- `editorId` `String` HTML div id of the container where the editor will be embedded (optional)
-- `style` `Object` style object for the editor container (default {})
-- `minHeight` `String` minimum height to initialize the editor with (default 500px)
-- `onLoad` `Function` called when the editor instance is created
-- `onReady` `Function` called when the editor has finished loading
-- `options` `Object` options passed to the Unlayer editor instance (default {})
-- `tools` `Object` configuration for the built-in and custom tools (default {})
-- `appearance` `Object` configuration for appearance and theme (default {})
-- `projectId` `Integer` Unlayer project ID (optional)
-
-See the [Unlayer Docs](https://docs.unlayer.com/) for all available options.
+- `editorId` {`String`} HTML div id of the container where the editor will be embedded (optional)
+- `minHeight` {`String`} minimum height to initialize the editor with (default 500px)
+- `onLoad` {`Function`} called when the editor instance is created
+- `onReady` {`Function`} called when the editor has finished loading
+- `options` {`Object`} options passed to the Unlayer editor instance (default {})
+  - See the [Unlayer Docs](https://docs.unlayer.com/docs/getting-started#configuration-options) for all available options.
+- `style` {`Object`} style object for the editor container (default {})
 
 ## Custom Tools
 
