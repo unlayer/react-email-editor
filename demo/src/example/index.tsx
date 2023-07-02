@@ -45,14 +45,18 @@ const Example = () => {
   const [preview, setPreview] = useState(false);
 
   const saveDesign = () => {
-    emailEditorRef.current?.editor?.saveDesign((design) => {
+    const unlayer = emailEditorRef.current?.editor;
+
+    unlayer?.saveDesign((design) => {
       console.log('saveDesign', design);
       alert('Design JSON has been logged in your developer console.');
     });
   };
 
   const exportHtml = () => {
-    emailEditorRef.current?.editor?.exportHtml((data) => {
+    const unlayer = emailEditorRef.current?.editor;
+
+    unlayer?.exportHtml((data) => {
       const { design, html } = data;
       console.log('exportHtml', html);
       alert('Output HTML has been logged in your developer console.');
@@ -60,11 +64,13 @@ const Example = () => {
   };
 
   const togglePreview = () => {
+    const unlayer = emailEditorRef.current?.editor;
+
     if (preview) {
-      emailEditorRef.current?.editor?.hidePreview();
+      unlayer?.hidePreview();
       setPreview(false);
     } else {
-      emailEditorRef.current?.editor?.showPreview('desktop');
+      unlayer?.showPreview('desktop');
       setPreview(true);
     }
   };

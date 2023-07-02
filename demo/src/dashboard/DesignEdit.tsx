@@ -57,14 +57,18 @@ const DesignEdit = () => {
   const emailEditorRef = useRef<EditorRef | null>(null);
 
   const saveDesign = () => {
-    emailEditorRef.current?.editor?.saveDesign((design) => {
+    const unlayer = emailEditorRef.current?.editor;
+
+    unlayer?.saveDesign((design) => {
       console.log('saveDesign', design);
       alert('Design JSON has been logged in your developer console.');
     });
   };
 
   const exportHtml = () => {
-    emailEditorRef.current?.editor?.exportHtml((data) => {
+    const unlayer = emailEditorRef.current?.editor;
+
+    unlayer?.exportHtml((data) => {
       const { html } = data;
       console.log('exportHtml', html);
       alert('Output HTML has been logged in your developer console.');

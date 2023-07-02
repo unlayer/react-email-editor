@@ -37,7 +37,9 @@ const App = (props) => {
   const emailEditorRef = useRef<EditorRef>(null);
 
   const exportHtml = () => {
-    emailEditorRef.current?.editor?.exportHtml((data) => {
+    const unlayer = emailEditorRef.current?.editor;
+
+    unlayer?.exportHtml((data) => {
       const { design, html } = data;
       console.log('exportHtml', html);
     });
