@@ -48,7 +48,10 @@ const App = (props) => {
   const onReady: EmailEditorProps['onReady'] = (unlayer) => {
     // editor is ready
     // you can load your template here;
-    // const templateJson = {};
+    // the design json can be obtained by calling
+    // unlayer.loadDesign(callback) or unlayer.exportHtml(callback)
+
+    // const templateJson = { DESIGN JSON GOES HERE };
     // unlayer.loadDesign(templateJson);
   };
 
