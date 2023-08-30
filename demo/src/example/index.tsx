@@ -2,9 +2,7 @@ import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 
 import packageJson from '../../../package.json';
-
-import EmailEditor from '../../../src';
-import { EditorRef } from '../../../src/types';
+import EmailEditor, { EditorRef, EmailEditorProps } from '../../../src'; // use react-email-editor instead
 import sample from './sample.json';
 
 const Container = styled.div`
@@ -47,14 +45,18 @@ const Example = () => {
   const [preview, setPreview] = useState(false);
 
   const saveDesign = () => {
-    emailEditorRef.current?.editor?.saveDesign((design) => {
+    const unlayer = emailEditorRef.current?.editor;
+
+    unlayer?.saveDesign((design) => {
       console.log('saveDesign', design);
       alert('Design JSON has been logged in your developer console.');
     });
   };
 
   const exportHtml = () => {
-    emailEditorRef.current?.editor?.exportHtml((data) => {
+    const unlayer = emailEditorRef.current?.editor;
+
+    unlayer?.exportHtml((data) => {
       const { design, html } = data;
       console.log('exportHtml', html);
       alert('Output HTML has been logged in your developer console.');
@@ -62,11 +64,13 @@ const Example = () => {
   };
 
   const togglePreview = () => {
+    const unlayer = emailEditorRef.current?.editor;
+
     if (preview) {
-      emailEditorRef.current?.editor?.hidePreview();
+      unlayer?.hidePreview();
       setPreview(false);
     } else {
-      emailEditorRef.current?.editor?.showPreview('desktop');
+      unlayer?.showPreview('desktop');
       setPreview(true);
     }
   };
@@ -75,19 +79,14 @@ const Example = () => {
     console.log('onDesignLoad', data);
   };
 
-  const onLoad = () => {
-    console.log('onLoad');
-
-    emailEditorRef.current?.editor?.addEventListener(
-      'design:loaded',
-      onDesignLoad
-    );
-
-    emailEditorRef.current?.editor?.loadDesign(sample);
+  const onLoad: EmailEditorProps['onLoad'] = (unlayer) => {
+    console.log('onLoad', unlayer);
+    unlayer.addEventListener('design:loaded', onDesignLoad);
+    unlayer.loadDesign(sample);
   };
 
-  const onReady = () => {
-    console.log('onReady');
+  const onReady: EmailEditorProps['onReady'] = (unlayer) => {
+    console.log('onReady', unlayer);
   };
 
   return (

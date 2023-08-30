@@ -5,8 +5,7 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "engines": {
     "node": ">=10"
@@ -30,6 +29,9 @@
       "pre-commit": "tsdx lint"
     }
   },
+  "dependencies": {
+    "unlayer-types": "latest"
+  },
   "devDependencies": {
     "@rollup/plugin-replace": "^5.0.2",
     "@testing-library/react": "^13.4.0",
@@ -38,6 +40,7 @@
     "husky": "^8.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rollup-plugin-copy": "^3.4.0",
     "tsdx": "^0.14.1",
     "tslib": "^2.4.1",
     "typescript": "^4.9.4"
