@@ -68,7 +68,7 @@ export const EmailEditor = React.forwardRef<EditorRef, EmailEditorProps>(
         };
       editor?.destroy();
       setEditor(unlayer.createEditor(options));
-    }, [props?.options, hasLoadedEmbedScript, editorId]);
+    }, [JSON.stringify(props?.options), hasLoadedEmbedScript, editorId]);
 
     const methodProps = Object.keys(props).filter((propName) =>
       /^on/.test(propName)
