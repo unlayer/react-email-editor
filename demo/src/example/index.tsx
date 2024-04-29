@@ -102,7 +102,16 @@ const Example = () => {
       </Bar>
 
       <React.StrictMode>
-        <EmailEditor ref={emailEditorRef} onLoad={onLoad} onReady={onReady} />
+        <EmailEditor
+          ref={emailEditorRef}
+          onLoad={onLoad}
+          onReady={onReady}
+          options={{
+            appearance: {
+              theme: "modern_light"
+            }
+          }}
+        />
       </React.StrictMode>
     </Container>
   );
