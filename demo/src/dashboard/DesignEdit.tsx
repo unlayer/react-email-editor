@@ -85,7 +85,14 @@ const DesignEdit = () => {
         <button onClick={exportHtml}>Export HTML</button>
       </Bar>
 
-      <EmailEditor ref={emailEditorRef} />
+      <EmailEditor
+        ref={emailEditorRef}
+        options={{
+          appearance: {
+            theme: "modern_light"
+          }
+        }}
+      />
     </Container>
   );
 };
