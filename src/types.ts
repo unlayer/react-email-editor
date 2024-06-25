@@ -4,7 +4,7 @@ import { CSSProperties } from 'react';
 
 import Embed from 'embed/index';
 import { Editor as EditorClass } from 'embed/Editor';
-import { AppearanceConfig, DisplayMode, ToolsConfig } from 'state/types/index';
+import { AppearanceConfig, DisplayMode, ToolsConfig } from 'state/types/types';
 
 export type Unlayer = typeof Embed;
 export type UnlayerOptions = Parameters<Unlayer['createEditor']>[0];
