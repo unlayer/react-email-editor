@@ -9,7 +9,8 @@ import pkg from '../package.json';
 import { Editor, EditorRef, EmailEditorProps } from './types';
 import { loadScript } from './loadScript';
 
-window.__unlayer_lastEditorId = window.__unlayer_lastEditorId || 0;
+const win = typeof window === 'undefined' ? { __unlayer_lastEditorId: 0 } : window
+win.__unlayer_lastEditorId = win.__unlayer_lastEditorId || 0;
 
 export const EmailEditor = React.forwardRef<EditorRef, EmailEditorProps>(
   (props, ref) => {
@@ -20,7 +21,7 @@ export const EmailEditor = React.forwardRef<EditorRef, EmailEditorProps>(
     const [hasLoadedEmbedScript, setHasLoadedEmbedScript] = useState(false);
 
     const editorId = useMemo(
-      () => props.editorId || `editor-${++window.__unlayer_lastEditorId}`,
+      () => props.editorId || `editor-${++win.__unlayer_lastEditorId}`,
       [props.editorId]
     );
 
