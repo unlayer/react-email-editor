@@ -88,6 +88,7 @@ const DesignEdit = () => {
       <EmailEditor
         ref={emailEditorRef}
         options={{
+          version: "latest",
           appearance: {
             theme: "modern_light"
           }

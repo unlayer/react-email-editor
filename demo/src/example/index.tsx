@@ -107,6 +107,7 @@ const Example = () => {
           onLoad={onLoad}
           onReady={onReady}
           options={{
+            version: "latest",
             appearance: {
               theme: "modern_light"
             }
