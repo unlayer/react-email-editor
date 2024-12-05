@@ -92,7 +92,7 @@ const Example = () => {
   return (
     <Container>
       <Bar>
-        <h1>React Email Editor v{packageJson.version} (Demo)</h1>
+        <h1>React Email Editor v{packageJson.version} (Demo) &mdash; (<a href="https://github.com/unlayer/react-email-editor" target="_blank">GitHub</a>)</h1>
 
         <button onClick={togglePreview}>
           {preview ? 'Hide' : 'Show'} Preview
