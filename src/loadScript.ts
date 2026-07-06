@@ -42,6 +42,15 @@ export const loadScript = (
       loaded = true;
       runCallbacks();
     };
+    embedScript.onerror = () => {
+      // Remove the failed script tag so a later loadScript call (e.g. a
+      // remount) is able to inject and retry it; otherwise isScriptInjected
+      // keeps returning true and the editor can never load on this page.
+      embedScript.remove();
+      console.error(
+        `react-email-editor: failed to load unlayer embed script from ${scriptUrl}`
+      );
+    };
     document.head.appendChild(embedScript);
   } else {
     runCallbacks();
