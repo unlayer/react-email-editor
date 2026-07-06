@@ -30,7 +30,7 @@
     }
   },
   "dependencies": {
-    "@unlayer/types": "latest"
+    "@unlayer/types": "^1.448.0"
   },
   "devDependencies": {
     "@rollup/plugin-replace": "^5.0.2",
