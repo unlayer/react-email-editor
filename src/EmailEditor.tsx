@@ -3,6 +3,7 @@ import React, {
   useState,
   useImperativeHandle,
   useMemo,
+  useRef,
 } from 'react';
 import type { DisplayMode, UnlayerEditor } from '@unlayer/types';
 
@@ -51,9 +52,14 @@ function EmailEditorInner<TDisplayMode extends DisplayMode | undefined = 'email'
       [editor]
     );
 
+    // Keep a ref to the latest editor so the unmount cleanup below doesn't
+    // capture the initial (null) state.
+    const editorRef = useRef(editor);
+    editorRef.current = editor;
+
     useEffect(() => {
       return () => {
-        editor?.destroy();
+        editorRef.current?.destroy();
       };
     }, []);
 
@@ -93,7 +99,7 @@ function EmailEditorInner<TDisplayMode extends DisplayMode | undefined = 'email'
           onReady(editor);
         });
       }
-    }, [editor, Object.keys(methodProps).join(',')]);
+    }, [editor, methodProps.join(',')]);
 
     return (
       <div
