@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Fixed
+
+- **SSR/hydration:** auto-generated editor ids now use React's `useId` (React 18+) so the id is identical on the server render and during client hydration. Previously the id came from a module-level counter that diverges between server and client, causing a hydration mismatch and — because the editor then mounted against a stale server id — a silently blank editor under SSR (e.g. the Next.js App Router). React 16.8/17 keep the legacy counter fallback. Pass an explicit `editorId` to opt out. ([EmailEditor.tsx](src/EmailEditor.tsx))
+
 ## 2.1.1 (2026-08-11)
 
 ### Fixed
