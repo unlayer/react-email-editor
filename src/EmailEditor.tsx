@@ -16,6 +16,25 @@ const win =
   typeof window === 'undefined' ? { __unlayer_lastEditorId: 0 } : window;
 win.__unlayer_lastEditorId = win.__unlayer_lastEditorId || 0;
 
+// Legacy fallback for React 16.8/17, which have no useId. Not hydration-safe,
+// but those versions predate the modern SSR story. Exercised only by the React
+// 16/17 smoke suite (npm run test:legacy), which runs without coverage.
+/* v8 ignore start */
+const useCounterEditorId = (): string =>
+  useMemo(() => `editor-${++win.__unlayer_lastEditorId}`, []);
+/* v8 ignore stop */
+
+// React 18+ exposes useId, which returns an identifier that is identical on the
+// server render and during client hydration — the correct fix for the id
+// mismatch that otherwise leaves the editor mounting against a stale server id
+// (blank editor) under SSR/Next.js. The implementation is picked once at module
+// load (stable for the app's lifetime), so the same hook runs on every render.
+const useGeneratedEditorId: () => string =
+  typeof React.useId === 'function'
+    ? // Strip ':' so the id is a valid CSS selector for unlayer.createEditor.
+      () => `editor-${React.useId().replace(/:/g, '')}`
+    : useCounterEditorId;
+
 function EmailEditorInner<
   TDisplayMode extends DisplayMode | undefined = 'email',
 >(
@@ -30,10 +49,10 @@ function EmailEditorInner<
 
   const [hasLoadedEmbedScript, setHasLoadedEmbedScript] = useState(false);
 
-  const editorId = useMemo(
-    () => props.editorId || `editor-${++win.__unlayer_lastEditorId}`,
-    [props.editorId]
-  );
+  // Always call the hook (rules of hooks); the generated id is only used when
+  // no explicit editorId prop is provided.
+  const generatedId = useGeneratedEditorId();
+  const editorId = props.editorId || generatedId;
 
   const options = {
     ...(props.options || {}),
