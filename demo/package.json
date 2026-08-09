@@ -13,7 +13,7 @@
   "dependencies": {
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-router-dom": "^7.6.0",
+    "react-router-dom": "^7.18.2",
     "styled-components": "^6.1.19"
   },
   "devDependencies": {
