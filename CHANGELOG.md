@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.1.1 (2026-08-11)
+
+### Fixed
+
+- **`loadScript` never invoked its callbacks when the embed script was already on the page.** If the Unlayer embed was preloaded in the HTML, injected by a parent app, or added by another component before `EmailEditor` mounted, the internal `loaded` flag stayed `false`, so queued callbacks never ran and the editor never initialized (and every later mount stayed broken too). Readiness is now derived from the global `unlayer` object, with a `load` listener attached to a still-loading pre-existing script (#496).
+
 ## 2.1.0 (2026-08-11)
 
 ### Added
