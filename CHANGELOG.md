@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.1.0 (2026-08-11)
+
+### Added
+
+- **Typings for forwarded Unlayer event handlers.** `EmailEditor` forwards any `on*` prop to the underlying editor via `addEventListener`, but `EmailEditorProps` previously declared only `onLoad`/`onReady`, so TypeScript users got errors on supported handlers. The common handlers (`onDesignLoad`, `onDesignUpdated`, `onImageUpload`) are now typed explicitly with their payloads, and an `on${string}` index signature covers the rest (#497).
+
+### Changed
+
+- Resolved all outstanding security advisories in the dev/build toolchain (`esbuild`, `postcss`, `nanoid`, `undici`) via `overrides`, and bumped the demo's `react-router-dom`. No runtime dependency of the published package was affected, so there is no consumer impact.
+
 ## 2.0.0 (2026-07-06)
 
 Modernization release. The component API is unchanged — most apps on React 16.8+ with a current toolchain can upgrade without any code changes.
