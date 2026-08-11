@@ -60,7 +60,7 @@ it('registers on* props as editor event listeners and onReady on editor:ready', 
     <EmailEditor
       editorId="test-editor"
       onReady={onReady}
-      {...({ onDesignUpdated } as any)}
+      onDesignUpdated={onDesignUpdated}
     />
   );
 
