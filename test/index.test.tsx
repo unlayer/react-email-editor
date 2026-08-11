@@ -72,6 +72,13 @@ it('registers on* props as editor event listeners and onReady on editor:ready', 
     'editor:ready',
     expect.any(Function)
   );
+
+  // Fire editor:ready and confirm onReady is invoked with the editor instance.
+  const readyCall = mockEditor.addEventListener.mock.calls.find(
+    ([type]) => type === 'editor:ready'
+  );
+  readyCall?.[1]();
+  expect(onReady).toHaveBeenCalledWith(mockEditor);
 });
 
 it('destroys the editor on unmount', () => {
