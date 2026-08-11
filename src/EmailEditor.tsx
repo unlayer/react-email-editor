@@ -29,11 +29,18 @@ const useCounterEditorId = (): string =>
 // mismatch that otherwise leaves the editor mounting against a stale server id
 // (blank editor) under SSR/Next.js. The implementation is picked once at module
 // load (stable for the app's lifetime), so the same hook runs on every render.
+//
+// v8 ignore: this is React-version selection glue. The two arms are covered by
+// separate suites (useId by the React 18/19 tests, the counter by the React
+// 16/17 smoke suite) but never within a single coverage run, so the untaken
+// arm always reads as a partial branch.
+/* v8 ignore start */
 const useGeneratedEditorId: () => string =
   typeof React.useId === 'function'
     ? // Strip ':' so the id is a valid CSS selector for unlayer.createEditor.
       () => `editor-${React.useId().replace(/:/g, '')}`
     : useCounterEditorId;
+/* v8 ignore stop */
 
 function EmailEditorInner<
   TDisplayMode extends DisplayMode | undefined = 'email',
