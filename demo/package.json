@@ -13,7 +13,7 @@
   "dependencies": {
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-router-dom": "^7.6.0",
+    "react-router-dom": "^7.18.2",
     "styled-components": "^6.1.19"
   },
   "devDependencies": {
@@ -22,5 +22,10 @@
     "@vitejs/plugin-react": "^5.0.0",
     "typescript": "^6.0.3",
     "vite": "^7.0.0"
+  },
+  "overrides": {
+    "esbuild": "^0.28.2",
+    "postcss": "^8.5.26",
+    "nanoid": "^3.3.17"
   }
 }

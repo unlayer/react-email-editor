@@ -59,6 +59,12 @@
     "typescript": "^6.0.3",
     "vitest": "^4.1.10"
   },
+  "overrides": {
+    "esbuild": "^0.28.2",
+    "postcss": "^8.5.26",
+    "nanoid": "^3.3.17",
+    "undici": "^7.29.0"
+  },
   "author": "Unlayer",
   "homepage": "https://github.com/unlayer/react-email-editor#readme",
   "license": "MIT",
