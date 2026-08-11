@@ -37,7 +37,8 @@
     "lint": "prettier --check .",
     "format": "prettier --write .",
     "prepare": "npm run build",
-    "release": "npm run build && npm publish",
+    "release": "npm run build && npm publish && npm run release:tag",
+    "release:tag": "git tag v$npm_package_version && git push origin v$npm_package_version",
     "netlify-build": "cd demo && npm install && npm run build"
   },
   "peerDependencies": {
