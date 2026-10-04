@@ -4,8 +4,8 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   resolve: {
-    // The demo imports the library source from ../src, which resolves react
-    // from the root node_modules — dedupe so only one copy is bundled.
+    // The local wrapper dependency resolves React from the root node_modules.
+    // Dedupe so the demo and wrapper share one copy.
     dedupe: ['react', 'react-dom', 'styled-components'],
   },
   server: {

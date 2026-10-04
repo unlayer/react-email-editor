@@ -54,46 +54,50 @@ See the [CHANGELOG](CHANGELOG.md) for the full list.
 Require the EmailEditor component and render it with JSX:
 
 ```tsx
-import React, { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
+import EmailEditor, {
+  type EditorRef,
+  type EmailEditorProps,
+} from 'react-email-editor';
 
-import EmailEditor, { EditorRef, EmailEditorProps } from 'react-email-editor';
-
-const App = (props) => {
+const App = () => {
   const emailEditorRef = useRef<EditorRef>(null);
+  const [ready, setReady] = useState(false);
+  const [html, setHtml] = useState('');
 
   const exportHtml = () => {
-    const unlayer = emailEditorRef.current?.editor;
-
-    unlayer?.exportHtml((data) => {
-      const { design, html } = data;
-      console.log('exportHtml', html);
+    if (!ready) return;
+    emailEditorRef.current?.editor?.exportHtml((data) => {
+      setHtml(data.html);
+      // Persist data.design to reopen it later with editor.loadDesign(data.design).
     });
   };
 
-  const onReady: EmailEditorProps['onReady'] = (unlayer) => {
-    // editor is ready
-    // you can load your template here;
-    // the design json can be obtained by calling
-    // unlayer.loadDesign(callback) or unlayer.exportHtml(callback)
-    // or generated from React code with @unlayer/react-elements (renderToJson)
-    // const templateJson = { DESIGN JSON GOES HERE };
-    // unlayer.loadDesign(templateJson);
+  const onReady: EmailEditorProps['onReady'] = (editor) => {
+    setReady(true);
+    // editor is now ready for calls such as saveDesign and loadDesign.
+    console.log('Editor ready', editor);
+    // Load an existing design here: editor.loadDesign(savedDesign).
+    // Obtain design JSON from editor.saveDesign(callback), editor.exportHtml(callback),
+    // or @unlayer/react-elements' renderToJson(). loadDesign accepts JSON, not a callback.
   };
 
   return (
     <div>
-      <div>
-        <button onClick={exportHtml}>Export HTML</button>
-      </div>
-
+      <button onClick={exportHtml} disabled={!ready}>
+        Export HTML
+      </button>
       <EmailEditor ref={emailEditorRef} onReady={onReady} />
+      {html && <textarea aria-label="Exported HTML" readOnly value={html} />}
     </div>
   );
 };
 
 createRoot(document.getElementById('app')!).render(<App />);
 ```
+
+This example uses React 18+ (`createRoot`); the wrapper also supports React 16.8/17 with their rendering API. Use an element with `id="app"` in your HTML.
 
 See the [example source](https://github.com/unlayer/react-email-editor/blob/master/demo/src/example/index.tsx) for a reference implementation.
 
@@ -145,9 +149,17 @@ Custom tools can help you add your own content blocks to the editor. Every appli
 
 You can submit new language translations by creating a PR on this GitHub repo: https://github.com/unlayer/translations. Translations managed by [PhraseApp](https://phraseapp.com)
 
-## Related packages
+## Guides and related workflows
 
-- [`@unlayer/react-elements`](https://github.com/unlayer/elements): write templates in code as React components (`Email`, `Row`, `Column`, `Heading`, `Paragraph`, `Button`, …) and render them to email HTML, responsive web pages or print-ready HTML for PDFs. `renderToJson()` synchronously returns design JSON you can pass to `loadDesign`, so templates written in code (by developers, coding agents, or an LLM at runtime) stay editable in this editor.
+[Create React templates that stay visually editable](./docs/react-elements.md) with **Unlayer Elements** and React Email Editor. The [runnable Elements demo](./demo/README.md#elements-to-visual-editor) shows the React source, loads the generated design, and lets you save, reopen, and export edits as HTML and JSON.
+
+| What you need                                                                | Package                                                          |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| Embed a drag-and-drop email editor in your app                               | `react-email-editor`                                             |
+| Author email, web, and document templates in React                           | [`@unlayer/react-elements`](https://github.com/unlayer/elements) |
+| Let teammates visually edit templates written by developers or coding agents | Both, connected through `renderToJson()` and `loadDesign()`      |
+
+Elements is optional and requires React 18+. Edited design JSON does not regenerate React source. See the [integration guide](./docs/react-elements.md) for the complete workflow and constraints.
 
 ### License
 

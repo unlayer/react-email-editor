@@ -1,8 +1,9 @@
 import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import packageJson from '../../../package.json';
-import EmailEditor, { EditorRef, EmailEditorProps } from '../../../src'; // use react-email-editor instead
+import EmailEditor, { EditorRef, EmailEditorProps } from 'react-email-editor';
 import type { JSONTemplate } from '@unlayer/types';
 import _sample from './sample.json';
 
@@ -29,6 +30,17 @@ const Bar = styled.div`
     text-align: left;
   }
 
+  a {
+    align-self: center;
+    color: #000;
+    white-space: nowrap;
+  }
+
+  button:disabled {
+    opacity: 0.5;
+    cursor: wait;
+  }
+
   button {
     flex: 1;
     padding: 10px;
@@ -46,6 +58,7 @@ const Bar = styled.div`
 const Example = () => {
   const emailEditorRef = useRef<EditorRef | null>(null);
   const [preview, setPreview] = useState(false);
+  const [ready, setReady] = useState(false);
 
   const saveDesign = () => {
     const unlayer = emailEditorRef.current?.editor;
@@ -81,28 +94,42 @@ const Example = () => {
 
   const onDesignLoad = (data: { design: JSONTemplate<'email'> }) => {
     console.log('onDesignLoad', data);
+    setReady(true);
   };
 
   const onLoad: EmailEditorProps['onLoad'] = (unlayer) => {
     console.log('onLoad', unlayer);
     unlayer.addEventListener('design:loaded', onDesignLoad);
-    unlayer.loadDesign(sample);
   };
 
   const onReady: EmailEditorProps['onReady'] = (unlayer) => {
-    console.log('onReady', unlayer);
+    unlayer.loadDesign(sample);
   };
 
   return (
     <Container>
       <Bar>
-        <h1>React Email Editor v{packageJson.version} (Demo) &mdash; (<a href="https://github.com/unlayer/react-email-editor" target="_blank">GitHub</a>)</h1>
+        <h1>
+          React Email Editor v{packageJson.version} (Demo) &mdash; (
+          <a
+            href="https://github.com/unlayer/react-email-editor"
+            target="_blank"
+          >
+            GitHub
+          </a>
+          )
+        </h1>
 
-        <button onClick={togglePreview}>
+        <Link to="/elements">Try Elements</Link>
+        <button onClick={togglePreview} disabled={!ready}>
           {preview ? 'Hide' : 'Show'} Preview
         </button>
-        <button onClick={saveDesign}>Save Design</button>
-        <button onClick={exportHtml}>Export HTML</button>
+        <button onClick={saveDesign} disabled={!ready}>
+          Save Design
+        </button>
+        <button onClick={exportHtml} disabled={!ready}>
+          Export HTML
+        </button>
       </Bar>
 
       <React.StrictMode>
@@ -111,10 +138,10 @@ const Example = () => {
           onLoad={onLoad}
           onReady={onReady}
           options={{
-            version: "latest",
+            version: 'latest',
             appearance: {
-              theme: "modern_light"
-            }
+              theme: 'modern_light',
+            },
           }}
         />
       </React.StrictMode>
