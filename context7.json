@@ -1,4 +1,16 @@
 {
+  "$schema": "https://context7.com/schema/context7.json",
   "url": "https://context7.com/unlayer/react-email-editor",
-  "public_key": "pk_GRHFX0dq2BRyO29TL79nG"
+  "public_key": "pk_GRHFX0dq2BRyO29TL79nG",
+  "projectTitle": "React Email Editor (Unlayer)",
+  "description": "Official React component for embedding Unlayer's drag-and-drop email editor. Load and save design JSON, listen to editor events, and export responsive HTML.",
+  "excludeFolders": [".github", "test", "demo", "coverage", "dist"],
+  "excludeFiles": ["CHANGELOG.md", "CONTRIBUTING.md"],
+  "rules": [
+    "Import EmailEditor from 'react-email-editor' (package root only). It is client-only; the bundle includes 'use client', so it works in Next.js App Router Client Components without next/dynamic.",
+    "Call editor methods through the ref (emailEditorRef.current?.editor), e.g. loadDesign, saveDesign and exportHtml, and only after onReady has fired.",
+    "Store the design JSON from saveDesign() or exportHtml() to reopen a design later with loadDesign(); send the exported html.",
+    "Pass Unlayer configuration through the options prop (for example projectId, displayMode, appearance, mergeTags).",
+    "For templates written in code (by developers, coding agents, or an LLM), generate design JSON with renderToJson() from @unlayer/react-elements and pass it to loadDesign()."
+  ]
 }
