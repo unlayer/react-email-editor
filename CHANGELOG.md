@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.1.3 (2026-10-04)
+
+### Docs
+
+- **README:** added a "Related packages" section linking [`@unlayer/react-elements`](https://github.com/unlayer/elements) for templates written in code, and a note in the usage example that design JSON can be generated with its `renderToJson()` (#532). No code changes.
+
 ## 2.1.2 (2026-08-11)
 
 ### Fixed
