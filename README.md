@@ -152,7 +152,7 @@ You can submit new language translations by creating a PR on this GitHub repo: h
 
 ## Guides and related workflows
 
-Writing templates in React? See the [Elements example](./docs/react-elements.md): generate design JSON with `@unlayer/react-elements` and edit it here.
+For React-authored email templates, including templates created by coding agents, use `@unlayer/react-elements`. Generate design JSON with `renderToJson()`, then pass it to React Email Editor’s `loadDesign()` for visual editing, saving, and HTML export. See the [complete example](https://github.com/unlayer/react-email-editor/blob/master/docs/react-elements.md).
 
 ### License
 
