@@ -13,6 +13,7 @@ type ExportedEmail = { design: EmailDesign; html: string };
 
 export default function ElementsExample() {
   const editorRef = useRef<EditorRef>(null);
+  const pendingExport = useRef<(() => boolean) | null>(null);
   const [ready, setReady] = useState(false);
   const [busy, setBusy] = useState(false);
   const [status, setStatus] = useState('Loading the editor…');
@@ -29,6 +30,13 @@ export default function ElementsExample() {
     }, 30_000);
     return () => window.clearTimeout(timeout);
   }, [ready]);
+
+  useEffect(
+    () => () => {
+      pendingExport.current?.();
+    },
+    []
+  );
 
   const onReady = useCallback<NonNullable<EmailEditorProps['onReady']>>(
     (editor) => {
@@ -54,11 +62,27 @@ export default function ElementsExample() {
   );
 
   const exportEmail = () => {
-    if (!ready || busy || !editorRef.current?.editor) return;
+    if (!ready || pendingExport.current || !editorRef.current?.editor) return;
     setBusy(true);
     setError('');
+    let active = true;
+    // Finish once; ignore callbacks after a timeout, retry, or unmount.
+    const finish = () => {
+      if (!active) return false;
+      active = false;
+      window.clearTimeout(timeout);
+      pendingExport.current = null;
+      return true;
+    };
+    const timeout = window.setTimeout(() => {
+      if (!finish()) return;
+      setBusy(false);
+      setError('Export timed out. Please try again.');
+    }, 30_000);
+    pendingExport.current = finish;
     try {
       editorRef.current.editor.exportHtml(({ design, html }) => {
+        if (!finish()) return;
         setOutput({ design, html });
         try {
           saveDesign(window.localStorage, design);
@@ -74,6 +98,7 @@ export default function ElementsExample() {
         }
       });
     } catch {
+      if (!finish()) return;
       setError('Could not export the design. Please try again.');
       setBusy(false);
     }
