@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import EmailEditor, { EditorRef } from '../../../src'; // use react-email-editor instead
+import EmailEditor, { EditorRef } from 'react-email-editor';
 
 const Container = styled.div`
   display: flex;
@@ -88,10 +88,10 @@ const DesignEdit = () => {
       <EmailEditor
         ref={emailEditorRef}
         options={{
-          version: "latest",
+          version: 'latest',
           appearance: {
-            theme: "modern_light"
-          }
+            theme: 'modern_light',
+          },
         }}
       />
     </Container>
