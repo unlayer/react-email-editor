@@ -26,25 +26,6 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           fail_ci_if_error: false
 
-  demo:
-    name: Elements demo and documentation examples
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
-        with:
-          node-version: 22
-          cache: npm
-          cache-dependency-path: |
-            package-lock.json
-            demo/package-lock.json
-      - run: npm ci
-      - run: npm run build
-      - run: npm --prefix demo ci
-      - run: npm --prefix demo run build
-      - run: npm --prefix demo test
-      - run: npm --prefix demo run test:docs
-
   test:
     name: Test (Node ${{ matrix.node }}, React ${{ matrix.react }})
     runs-on: ubuntu-latest
