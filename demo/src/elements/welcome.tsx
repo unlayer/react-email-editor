@@ -10,8 +10,6 @@ import {
 import type { EmailDesign } from './storage';
 
 export function createWelcomeDesign() {
-  // Elements 0.1.22 types values broadly; the editor expects its stricter design type.
-  // This assertion applies only to the supported Elements template below.
   return renderToJson(
     <Email
       contentWidth="600px"
@@ -36,5 +34,5 @@ export function createWelcomeDesign() {
         </Column>
       </Row>
     </Email>
-  ) as EmailDesign;
+  ) as EmailDesign; // Bridge Elements 0.1.22 design types to the editor.
 }

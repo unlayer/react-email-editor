@@ -1,15 +1,31 @@
 ## Prerequisites
 
-[Node.js](http://nodejs.org/) >= v10 must be installed.
+[Node.js](https://nodejs.org/) 22, matching `.nvmrc`, must be installed.
 
 ## Installation
 
-- Running `npm install` in the components's root directory will install everything you need for development.
-- Running `npm install` in the `demo` directory will install everything you need to run a demo app locally.
+From the repository root:
+
+```bash
+npm install
+npm --prefix demo install
+```
+
+The root install builds the wrapper through its `prepare` script.
 
 ## Demo Development Server
 
-- `npm start` from `demo` directory will run the component's demo app at [http://localhost:3000](http://localhost:3000) with hot module reloading.
+The demo consumes the built wrapper through `file:..`. Run these commands in two terminals, both from the repository root:
+
+```bash
+npm start
+```
+
+```bash
+npm --prefix demo run dev
+```
+
+`npm start` runs `tsup --watch` to rebuild wrapper changes. The demo server reloads those builds at [http://localhost:3000](http://localhost:3000); running only the demo server will not pick up wrapper source edits.
 
 ## Running Tests
 

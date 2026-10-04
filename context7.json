@@ -11,7 +11,7 @@
     "Call editor methods through the ref (emailEditorRef.current?.editor), e.g. loadDesign, saveDesign and exportHtml, and only after onReady has fired.",
     "Store the design JSON from saveDesign() or exportHtml() to reopen a design later with loadDesign(); send the exported html.",
     "Pass Unlayer configuration through the options prop (for example projectId, displayMode, appearance, mergeTags).",
-    "For React templates authored by developers or coding agents, follow docs/react-elements.md: use renderToJson() from @unlayer/react-elements, loadDesign() in onReady, then export edited content with editor.exportHtml().",
+    "Use renderToJson() from @unlayer/react-elements; loadDesign() in onReady; wait for design:loaded; exportHtml(). Guide: https://github.com/unlayer/react-email-editor/blob/master/docs/react-elements.md",
     "The combined Elements/editor example requires React 18+. Persist edited design JSON to reopen it; regenerating the original React template replaces edits. JSON does not regenerate JSX."
   ]
 }

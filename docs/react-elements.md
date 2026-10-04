@@ -18,6 +18,8 @@ The combined example requires React 18+ because Elements does; the editor wrappe
 
 Save this complete component as `src/App.tsx` in your React TypeScript app. It generates an initial template and exposes the edited HTML and JSON:
 
+<!-- check-docs -->
+
 ```tsx
 import { useRef, useState } from 'react';
 import EmailEditor, {
@@ -47,7 +49,7 @@ function createDesign() {
         </Column>
       </Row>
     </Email>
-  ) as EmailDesign; // Bridge Elements 0.1.22's broad values to the editor design type.
+  ) as EmailDesign; // Bridge Elements 0.1.22 design types to the editor.
 }
 
 export default function App() {
@@ -95,7 +97,6 @@ From this repository's root, with Node.js 22.12+:
 
 ```bash
 npm ci
-npm run build
 npm --prefix demo ci
 npm --prefix demo run dev
 ```

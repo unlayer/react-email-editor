@@ -4,7 +4,6 @@ Run from the repository root with Node.js 22.12+:
 
 ```bash
 npm ci
-npm run build
 npm --prefix demo ci
 npm --prefix demo run dev
 ```
@@ -24,7 +23,7 @@ The welcome email is generated with `@unlayer/react-elements` and loaded into `r
 | `src/elements/storage.ts`  | Versioned demo storage and basic saved-data checks                     |
 | `test/elements.test.tsx`   | Readiness, export, reopening edits, and storage failures               |
 
-Elements is a demo dependency, not a dependency of the editor wrapper. This route imports the built local `react-email-editor` package through `file:..`; rebuild the root package after changing wrapper code. All demo routes use the same local package.
+Elements is a demo dependency, not a dependency of the editor wrapper. This route imports the built local `react-email-editor` package through `file:..`; run the root `npm start` watcher alongside the demo server when editing wrapper code (see [contributing](../CONTRIBUTING.md#demo-development-server)). All demo routes use the same local package.
 
 Read the [complete integration guide](../docs/react-elements.md) for installing the two packages in your own React app and handling persistence in production.
 
@@ -38,4 +37,4 @@ npm --prefix demo test
 npm --prefix demo run test:docs
 ```
 
-The demo tests use the real Elements renderer and a controlled hosted-editor boundary. They do not prove hosted-editor compatibility. The documentation check compiles the README and integration guide snippets with strict TypeScript against the built wrapper. A live smoke check should additionally edit a block, export it, reload, and verify the saved edit in the real editor.
+The demo tests use the real Elements renderer and a controlled hosted-editor boundary. They do not prove hosted-editor compatibility. The documentation check compiles complete TSX examples marked with `<!-- check-docs -->` in the README and integration guide. It uses strict TypeScript against the built wrapper and reports errors at their Markdown lines; unmarked explanatory fragments are ignored. A live smoke check should additionally edit a block, export it, reload, and verify the saved edit in the real editor.
