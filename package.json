@@ -64,7 +64,7 @@
     "esbuild": "^0.28.2",
     "postcss": "^8.5.26",
     "nanoid": "^3.3.17",
-    "undici": "^7.29.0"
+    "undici": "^7.30.0"
   },
   "author": "Unlayer",
   "homepage": "https://github.com/unlayer/react-email-editor#readme",
