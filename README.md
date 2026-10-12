@@ -28,7 +28,13 @@ Use it when you need email template creation inside your app without building an
 
 ## Live Demo
 
-Check out the live demo here: https://react-email-editor-demo.netlify.app/ ([Source Code](https://github.com/unlayer/react-email-editor/tree/master/demo/src))
+Check out the live demo here: https://react-email-editor-demo.netlify.app/ ([Source Code](https://github.com/unlayer/react-email-editor/tree/master/demo/src)), or run it locally — a Vite-based demo lives in [`demo/`](demo):
+
+```sh
+cd demo
+npm install
+npm run
+```
 
 ## Installation
 

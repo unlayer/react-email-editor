@@ -28,6 +28,7 @@
   },
   "scripts": {
     "start": "tsup --watch",
+    "dev": "npm --prefix demo install && npm --prefix demo run dev",
     "build": "tsup",
     "test": "vitest run",
     "test:legacy": "vitest run --config vitest.legacy.config.ts",
