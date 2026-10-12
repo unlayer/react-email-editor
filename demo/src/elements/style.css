@@ -1,0 +1,114 @@
+.elements-demo {
+  padding: 24px;
+  background: #f4f6f8;
+  color: #172b3a;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+.elements-demo header,
+.elements-demo footer,
+.elements-demo details {
+  max-width: 1500px;
+  margin: 0 auto 20px;
+}
+.elements-demo h1 {
+  margin: 20px 0 12px;
+  font-size: 30px;
+}
+.elements-demo h2 {
+  font-size: 18px;
+}
+.elements-demo a {
+  color: #075b85;
+}
+.elements-demo p {
+  line-height: 1.5;
+}
+.elements-demo .hint {
+  color: #536470;
+  font-size: 14px;
+}
+.elements-demo button {
+  background: #0879a1;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+.elements-demo button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.elements-demo [role='alert'] {
+  color: #a1261b;
+}
+.elements-demo .workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 20px;
+  max-width: 1500px;
+  margin: 0 auto 24px;
+}
+.elements-demo .editor-panel,
+.elements-demo .output-panel {
+  background: white;
+  border: 1px solid #d5dee5;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.elements-demo .output-panel {
+  padding: 16px;
+}
+.elements-demo .output-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0;
+}
+.elements-demo select {
+  padding: 8px 4px;
+}
+.elements-demo textarea {
+  box-sizing: border-box;
+  width: 100%;
+  height: 470px;
+  resize: vertical;
+  border: 1px solid #bac8d2;
+  border-radius: 4px;
+  padding: 12px;
+  font: 12px/1.5 monospace;
+}
+.elements-demo summary {
+  cursor: pointer;
+  padding: 12px 0;
+  font-weight: bold;
+}
+.elements-demo pre {
+  padding: 20px;
+  overflow: auto;
+  background: #172b3a;
+  color: #eef5fa;
+  border-radius: 6px;
+  font: 13px/1.6 monospace;
+}
+.elements-demo footer {
+  font-size: 14px;
+}
+@media (max-width: 1400px) {
+  .elements-demo .workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .elements-demo textarea {
+    height: 220px;
+  }
+}
+@media (max-width: 600px) {
+  .elements-demo {
+    padding: 12px;
+  }
+  .elements-demo h1 {
+    font-size: 24px;
+  }
+}

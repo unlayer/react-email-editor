@@ -15,5 +15,12 @@
     "noEmit": true,
     "useDefineForClassFields": true
   },
-  "include": ["index.tsx", "src", "vite.config.ts"]
+  "include": [
+    "index.tsx",
+    "src",
+    "vite.config.ts",
+    "vite-env.d.ts",
+    "vitest.config.ts",
+    "test"
+  ]
 }

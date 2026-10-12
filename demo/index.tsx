@@ -1,9 +1,11 @@
+import { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import { createGlobalStyle } from 'styled-components';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Example from './src/example';
 import Dashboard from './src/dashboard';
+const ElementsExample = lazy(() => import('./src/elements'));
 
 const GlobalStyle = createGlobalStyle`
   html, body {
@@ -25,6 +27,14 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Example />} />
         <Route path="/dashboard/*" element={<Dashboard />} />
+        <Route
+          path="/elements"
+          element={
+            <Suspense fallback={<p>Loading the Elements example…</p>}>
+              <ElementsExample />
+            </Suspense>
+          }
+        />
       </Routes>
     </Router>
   );
