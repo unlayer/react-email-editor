@@ -2,6 +2,7 @@ import { CSSProperties } from 'react';
 
 import type {
   AppearanceConfig,
+  CallbackTypeMap,
   DisplayMode,
   ToolsConfig,
   UnlayerEditor,
@@ -27,6 +28,15 @@ export interface EmailEditorProps<
   };
   scriptUrl?: string | undefined;
   style?: CSSProperties | undefined;
+
+  // Any prop beginning with `on` (other than onLoad/onReady above) is
+  // forwarded to the Unlayer editor via `addEventListener`. The common
+  // handlers are typed explicitly for autocomplete and payload typing; the
+  // index signature keeps arbitrary forwarded events from erroring.
+  onDesignLoad?: CallbackTypeMap<TDisplayMode>['onDesignLoad'];
+  onDesignUpdated?: CallbackTypeMap<TDisplayMode>['design:updated'];
+  onImageUpload?: CallbackTypeMap<TDisplayMode>['onImageUpload'];
+  [event: `on${string}`]: ((...args: any[]) => void) | undefined;
 
   // redundant props -- already available in options
   /** @deprecated */

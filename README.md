@@ -76,6 +76,7 @@ const App = (props) => {
     // you can load your template here;
     // the design json can be obtained by calling
     // unlayer.loadDesign(callback) or unlayer.exportHtml(callback)
+    // or generated from React code with @unlayer/react-elements (renderToJson)
     // const templateJson = { DESIGN JSON GOES HERE };
     // unlayer.loadDesign(templateJson);
   };
@@ -143,6 +144,10 @@ Custom tools can help you add your own content blocks to the editor. Every appli
 ## Localization
 
 You can submit new language translations by creating a PR on this GitHub repo: https://github.com/unlayer/translations. Translations managed by [PhraseApp](https://phraseapp.com)
+
+## Related packages
+
+- [`@unlayer/react-elements`](https://github.com/unlayer/elements): write templates in code as React components (`Email`, `Row`, `Column`, `Heading`, `Paragraph`, `Button`, …) and render them to email HTML, responsive web pages or print-ready HTML for PDFs. `renderToJson()` synchronously returns design JSON you can pass to `loadDesign`, so templates written in code (by developers, coding agents, or an LLM at runtime) stay editable in this editor.
 
 ### License
 

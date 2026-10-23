@@ -1,0 +1,52 @@
+name: Release
+
+# Publishing to npm stays local (`npm run release`, using the maintainer's
+# 2FA). That command pushes a `vX.Y.Z` tag, which triggers this workflow to
+# create the matching GitHub Release from the CHANGELOG entry.
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  github-release:
+    name: Create GitHub Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Extract changelog notes for this tag
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          # Pull the section between "## <version> (...)" and the next "## ".
+          # index()==1 matches the literal header start, so no regex escaping
+          # of the version's dots is needed.
+          awk -v h="## ${VERSION} (" '
+            index($0, h) == 1 { f = 1; next }
+            f && /^## / { exit }
+            f { print }
+          ' CHANGELOG.md > release-notes.md
+          # Fall back to a pointer if the version has no changelog section.
+          if [ ! -s release-notes.md ]; then
+            echo "See [CHANGELOG.md](https://github.com/${GITHUB_REPOSITORY}/blob/master/CHANGELOG.md)." > release-notes.md
+          fi
+          echo "----- release notes for ${VERSION} -----"
+          cat release-notes.md
+
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Mark tags containing a hyphen (e.g. v1.7.0-beta.0) as prereleases.
+          case "$GITHUB_REF_NAME" in
+            *-*) PRERELEASE="--prerelease" ;;
+            *)   PRERELEASE="" ;;
+          esac
+          gh release create "$GITHUB_REF_NAME" \
+            --repo "$GITHUB_REPOSITORY" \
+            --title "$GITHUB_REF_NAME" \
+            --notes-file release-notes.md \
+            $PRERELEASE

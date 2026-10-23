@@ -1,5 +1,33 @@
 # Changelog
 
+## 2.1.3 (2026-10-04)
+
+### Docs
+
+- **README:** added a "Related packages" section linking [`@unlayer/react-elements`](https://github.com/unlayer/elements) for templates written in code, and a note in the usage example that design JSON can be generated with its `renderToJson()` (#532). No code changes.
+
+## 2.1.2 (2026-08-11)
+
+### Fixed
+
+- **SSR/hydration:** auto-generated editor ids now use React's `useId` (React 18+) so the id is identical on the server render and during client hydration. Previously the id came from a module-level counter that diverges between server and client, causing a hydration mismatch and — because the editor then mounted against a stale server id — a silently blank editor under SSR (e.g. the Next.js App Router). React 16.8/17 keep the legacy counter fallback. Pass an explicit `editorId` to opt out. ([EmailEditor.tsx](src/EmailEditor.tsx))
+
+## 2.1.1 (2026-08-11)
+
+### Fixed
+
+- **`loadScript` never invoked its callbacks when the embed script was already on the page.** If the Unlayer embed was preloaded in the HTML, injected by a parent app, or added by another component before `EmailEditor` mounted, the internal `loaded` flag stayed `false`, so queued callbacks never ran and the editor never initialized (and every later mount stayed broken too). Readiness is now derived from the global `unlayer` object, with a `load` listener attached to a still-loading pre-existing script (#496).
+
+## 2.1.0 (2026-08-11)
+
+### Added
+
+- **Typings for forwarded Unlayer event handlers.** `EmailEditor` forwards any `on*` prop to the underlying editor via `addEventListener`, but `EmailEditorProps` previously declared only `onLoad`/`onReady`, so TypeScript users got errors on supported handlers. The common handlers (`onDesignLoad`, `onDesignUpdated`, `onImageUpload`) are now typed explicitly with their payloads, and an `on${string}` index signature covers the rest (#497).
+
+### Changed
+
+- Resolved all outstanding security advisories in the dev/build toolchain (`esbuild`, `postcss`, `nanoid`, `undici`) via `overrides`, and bumped the demo's `react-router-dom`. No runtime dependency of the published package was affected, so there is no consumer impact.
+
 ## 2.0.0 (2026-07-06)
 
 Modernization release. The component API is unchanged — most apps on React 16.8+ with a current toolchain can upgrade without any code changes.

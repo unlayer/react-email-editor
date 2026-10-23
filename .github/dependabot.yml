@@ -7,6 +7,13 @@ updates:
     groups:
       dev-dependencies:
         dependency-type: development
+    ignore:
+      # TypeScript 7 is the native rewrite; tsup's bundled rollup-plugin-dts
+      # targets the TS 5.x compiler API and cannot emit our .d.ts under it
+      # (build fails). Hold major bumps until the dts toolchain supports TS 7;
+      # minor/patch within the current major still flow.
+      - dependency-name: typescript
+        update-types: ['version-update:semver-major']
   - package-ecosystem: github-actions
     directory: /
     schedule:
