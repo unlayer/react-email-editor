@@ -11,6 +11,6 @@
     "Call editor methods through the ref (emailEditorRef.current?.editor), e.g. loadDesign, saveDesign and exportHtml, and only after onReady has fired.",
     "Store the design JSON from saveDesign() or exportHtml() to reopen a design later with loadDesign(); send the exported html.",
     "Pass Unlayer configuration through the options prop (for example projectId, displayMode, appearance, mergeTags).",
-    "For templates written in code (by developers, coding agents, or an LLM), generate design JSON with renderToJson() from @unlayer/react-elements and pass it to loadDesign()."
+    "For templates written in code (by developers, coding agents, or an LLM), generate design JSON with renderToJson() from @hyper-elements/react and pass it to loadDesign()."
   ]
 }
