@@ -147,7 +147,7 @@ You can submit new language translations by creating a PR on this GitHub repo: h
 
 ## Related packages
 
-- [`@hyper-elements/react`](https://github.com/unlayer/elements): write templates in code as React components (`Email`, `Row`, `Column`, `Heading`, `Paragraph`, `Button`, …) and render them to email HTML, responsive web pages or print-ready HTML for PDFs. `renderToJson()` synchronously returns design JSON you can pass to `loadDesign`, so templates written in code (by developers, coding agents, or an LLM at runtime) stay editable in this editor.
+- [`@hyper-elements/react`](https://github.com/hyper-elements/hyper-elements): write templates in code as React components (`Email`, `Row`, `Column`, `Heading`, `Paragraph`, `Button`, …) and render them to email HTML, responsive web pages or print-ready HTML for PDFs. `renderToJson()` synchronously returns design JSON you can pass to `loadDesign`, so templates written in code (by developers, coding agents, or an LLM at runtime) stay editable in this editor.
 
 ### License
 
