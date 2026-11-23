@@ -9,14 +9,12 @@
 
 ## Demo Development Server
 
-- `npm start` from `demo` directory will run the component's demo app at [http://localhost:3000](http://localhost:3000) with hot module reloading.
+- `npm run dev` from the `demo` directory runs the demo app at [http://localhost:3000](http://localhost:3000) with hot module reloading. The demo imports the component straight from `src/`, so it doubles as a development harness.
 
 ## Running Tests
 
 - `npm test` will run the tests once.
-
 - `npm run test:coverage` will run the tests and produce a coverage report in `coverage/`.
-
 - `npm run test:watch` will run the tests on every change.
 
 ## Building
