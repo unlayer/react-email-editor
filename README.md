@@ -121,6 +121,10 @@ All unlayer methods are available in the editor instance (`emailEditorRef.curren
   - See the [Unlayer Docs](https://docs.unlayer.com/builder/installation) for all available options.
 - `style` {`Object`} style object for the editor container (default {})
 
+## AI Coding Agents
+
+Working with an AI coding agent? See [AGENTS.md](AGENTS.md) for integration guidance and repo conventions.
+
 ## Support
 
 The email editor output is tested using the most popular email clients.
